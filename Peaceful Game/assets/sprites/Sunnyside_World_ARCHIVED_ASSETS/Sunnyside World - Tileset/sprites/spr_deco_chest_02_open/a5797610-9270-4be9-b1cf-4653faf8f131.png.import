@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cailqq2l3q5ew"
+path="res://.godot/imported/a5797610-9270-4be9-b1cf-4653faf8f131.png-40e36fd58db6b2cd340eb5ceb2f481da.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/sprites/Sunnyside_World_ARCHIVED_ASSETS/Sunnyside World - Tileset/sprites/spr_deco_chest_02_open/a5797610-9270-4be9-b1cf-4653faf8f131.png"
+dest_files=["res://.godot/imported/a5797610-9270-4be9-b1cf-4653faf8f131.png-40e36fd58db6b2cd340eb5ceb2f481da.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

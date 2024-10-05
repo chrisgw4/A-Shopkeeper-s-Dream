@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bvcw475yn42lw"
+path="res://.godot/imported/89ee64a2-5375-4441-b18a-899747059d39.png-89fa5bdda2f1b27037d91c047190bfec.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/sprites/Sunnyside_World_ARCHIVED_ASSETS/Sunnyside World - Tileset/sprites/sunflower_00/layers/a1cd5f3b-e0f2-4c31-82f2-21cf485f7beb/89ee64a2-5375-4441-b18a-899747059d39.png"
+dest_files=["res://.godot/imported/89ee64a2-5375-4441-b18a-899747059d39.png-89fa5bdda2f1b27037d91c047190bfec.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
