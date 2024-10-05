@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bne2ac4w26k2m"]
+
+[ext_resource type="Script" path="res://scenes/tree/collect_list.gd" id="1_5q45s"]
+
+[node name="CollectList" type="MarginContainer"]
+offset_right = 103.0
+offset_bottom = 195.0
+mouse_filter = 2
+script = ExtResource("1_5q45s")
+
+[node name="VFlowContainer" type="VFlowContainer" parent="."]
+custom_minimum_size = Vector2(120, 4.79213e-12)
+layout_mode = 2

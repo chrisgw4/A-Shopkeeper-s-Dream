@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyy1dhfysa8tu"]
+
+[ext_resource type="Script" path="res://scenes/collect_minigame.gd" id="1_t3ynf"]
+[ext_resource type="Texture2D" uid="uid://fscfen5bm82q" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_left.png" id="1_xuu5h"]
+[ext_resource type="Texture2D" uid="uid://bmtx2uwvfb6b5" path="res://assets/sprites/Sunnyside_World_Assets/UI/greenbar_06-1.png" id="2_ttq13"]
+[ext_resource type="Script" path="res://scenes/ArrowLeft.gd" id="3_wq31p"]
+[ext_resource type="Texture2D" uid="uid://bwvnvgl11njs4" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_3kbvr"]
+[ext_resource type="Texture2D" uid="uid://baqkg2ryeg57j" path="res://assets/sprites/Sunnyside_World_Assets/redbar_06-1.png.png" id="6_bj1pl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rkcx"]
+size = Vector2(17, 13)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hg2cg"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klvm7"]
+size = Vector2(28, 11)
+
+[node name="CollectMinigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t3ynf")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 40.0
+offset_right = 39.0
+offset_bottom = 80.0
+rotation = -1.5708
+texture = ExtResource("2_ttq13")
+stretch_mode = 4
+
+[node name="WinCondition" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinCondition"]
+position = Vector2(8.5, 17.5)
+shape = SubResource("RectangleShape2D_3rkcx")
+
+[node name="ArrowLeft" type="Sprite2D" parent="."]
+position = Vector2(18, -1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xuu5h")
+script = ExtResource("3_wq31p")
+
+[node name="Area2D" type="Area2D" parent="ArrowLeft"]
+collision_layer = 256
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowLeft/Area2D"]
+shape = SubResource("CircleShape2D_hg2cg")
+
+[node name="MoveDownNow" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoveDownNow"]
+position = Vector2(4, -4.5)
+shape = SubResource("RectangleShape2D_klvm7")
+
+[node name="MoveUpNow" type="Area2D" parent="."]
+position = Vector2(0, 45)
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MoveUpNow"]
+position = Vector2(4, -4.5)
+shape = SubResource("RectangleShape2D_klvm7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(6.70388, 17.5102)
+rotation = 1.5708
+scale = Vector2(1.17974, 2.57622)
+texture = ExtResource("5_3kbvr")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(6.71634, 29.3284)
+rotation = 1.5708
+scale = Vector2(0.969468, 2.56376)
+texture = ExtResource("6_bj1pl")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(6.72923, 8.188)
+rotation = 1.5708
+scale = Vector2(0.516927, 2.58038)
+texture = ExtResource("6_bj1pl")
+
+[connection signal="area_entered" from="MoveDownNow" to="." method="_on_move_down_now_area_entered"]
+[connection signal="area_entered" from="MoveUpNow" to="." method="_on_move_up_now_area_entered"]

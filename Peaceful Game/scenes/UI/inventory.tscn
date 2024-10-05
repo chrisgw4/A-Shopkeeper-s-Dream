@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://biyyhh1kjx02l"]
+
+[ext_resource type="Script" path="res://scenes/UI/inventory.gd" id="1_mqg73"]
+[ext_resource type="PackedScene" uid="uid://fmgh1lo1ahxc" path="res://scenes/UI/inventory_slot.tscn" id="2_hlahb"]
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mqg73")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+custom_minimum_size = Vector2(400, 4.79213e-12)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -50.0
+offset_right = 200.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="InventorySlot" parent="HFlowContainer" instance=ExtResource("2_hlahb")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot2" parent="HFlowContainer" instance=ExtResource("2_hlahb")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+
+[node name="InventorySlot3" parent="HFlowContainer" instance=ExtResource("2_hlahb")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2

@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://hrqhn6lhv0bv"]
+
+[ext_resource type="PackedScene" uid="uid://dhu4ts6sy5ye3" path="res://scenes/player/player.tscn" id="1_wull3"]
+[ext_resource type="PackedScene" uid="uid://biyyhh1kjx02l" path="res://scenes/UI/inventory.tscn" id="2_2o6tr"]
+[ext_resource type="PackedScene" uid="uid://7mdk32hofwaf" path="res://scenes/forest.tscn" id="2_32qt5"]
+[ext_resource type="Texture2D" uid="uid://b0ra313xjdbxo" path="res://assets/sprites/Sunnyside_World_Assets/Keyboard White-1.png (3).png" id="4_efsu3"]
+[ext_resource type="PackedScene" uid="uid://bne2ac4w26k2m" path="res://scenes/tree/collect_list.tscn" id="5_s80cb"]
+[ext_resource type="Texture2D" uid="uid://bwvnvgl11njs4" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_wu17k"]
+[ext_resource type="PackedScene" uid="uid://ctbg3rbtpcdv5" path="res://scenes/UI/money_ui.tscn" id="7_3mi00"]
+[ext_resource type="PackedScene" uid="uid://bdeatu4e5lokr" path="res://scenes/tavern/tavern.tscn" id="9_13buh"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Tavern" parent="." node_paths=PackedStringArray("collect_list", "player") instance=ExtResource("9_13buh")]
+position = Vector2(3229, -2569)
+collect_list = NodePath("../Town/Player/CollectList")
+player = NodePath("../Town/Player")
+
+[node name="Town" parent="." instance=ExtResource("2_32qt5")]
+texture_filter = 1
+position = Vector2(-243, -182)
+
+[node name="Player" parent="Town" node_paths=PackedStringArray("stamina_bar", "money_ui") instance=ExtResource("1_wull3")]
+position = Vector2(243, 182)
+stamina_bar = NodePath("TextureProgressBar")
+money_ui = NodePath("MoneyUI")
+
+[node name="CollectList" parent="Town/Player" instance=ExtResource("5_s80cb")]
+z_index = 2
+z_as_relative = false
+offset_left = 125.0
+offset_top = -116.0
+offset_right = 245.0
+offset_bottom = 79.0
+scale = Vector2(0.7, 0.7)
+
+[node name="Inventory" parent="Town/Player" node_paths=PackedStringArray("player") instance=ExtResource("2_2o6tr")]
+z_index = 2
+z_as_relative = false
+offset_top = 127.0
+offset_bottom = 127.0
+player = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="Town/Player"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Town/Player"]
+z_index = 2
+z_as_relative = false
+offset_left = 182.0
+offset_top = 109.0
+offset_right = 197.0
+offset_bottom = 116.0
+rotation = -1.5708
+scale = Vector2(3, 3)
+step = 0.01
+value = 100.0
+texture_under = ExtResource("4_efsu3")
+texture_progress = ExtResource("5_wu17k")
+texture_progress_offset = Vector2(2, 2)
+
+[node name="MoneyUI" parent="Town/Player" instance=ExtResource("7_3mi00")]
+offset_left = -209.0
+offset_top = -119.0
+offset_right = -209.0
+offset_bottom = -119.0
+scale = Vector2(0.6, 0.6)

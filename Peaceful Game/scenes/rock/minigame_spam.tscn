@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8omxkkkp8pw4"]
+
+[ext_resource type="Texture2D" uid="uid://b0ra313xjdbxo" path="res://assets/sprites/Sunnyside_World_Assets/Keyboard White-1.png (3).png" id="1_1bknk"]
+[ext_resource type="Script" path="res://scenes/rock/minigame_spam.gd" id="1_46stx"]
+[ext_resource type="Texture2D" uid="uid://baqkg2ryeg57j" path="res://assets/sprites/Sunnyside_World_Assets/redbar_06-1.png.png" id="2_d6r7e"]
+
+[node name="MinigameSpam" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_46stx")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 15.0
+offset_bottom = 7.0
+step = 0.01
+texture_under = ExtResource("1_1bknk")
+texture_progress = ExtResource("2_d6r7e")
+texture_progress_offset = Vector2(2, 2)
+
+[connection signal="value_changed" from="TextureProgressBar" to="." method="_on_texture_progress_bar_value_changed"]

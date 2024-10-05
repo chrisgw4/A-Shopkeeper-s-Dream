@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://drg0w3ahvxwxo"]
+
+[ext_resource type="PackedScene" uid="uid://b5kn8cvix6scs" path="res://scenes/pick_ups/item.tscn" id="1_5ofdh"]
+[ext_resource type="Texture2D" uid="uid://dvctnu4rwk1l6" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/rock.png" id="2_iky42"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkvo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iky42")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_el2y2"]
+radius = 8.0
+
+[node name="Rock" instance=ExtResource("1_5ofdh")]
+item_name = "Rock"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-2, 5)
+sprite_frames = SubResource("SpriteFrames_dkvo7")
+offset = Vector2(2, -6)
+
+[node name="CollisionShape2D" parent="PickupArea" index="0"]
+shape = SubResource("CircleShape2D_el2y2")

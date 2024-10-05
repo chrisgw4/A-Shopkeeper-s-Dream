@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyl2amrrxrq3w"]
+
+[ext_resource type="PackedScene" uid="uid://b5kn8cvix6scs" path="res://scenes/pick_ups/item.tscn" id="1_1b228"]
+[ext_resource type="Texture2D" uid="uid://dudyjxkvq3yvn" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/wood.png" id="2_biwec"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osbpe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_biwec")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ki7x"]
+radius = 7.0
+
+[node name="Wood" instance=ExtResource("1_1b228")]
+gravity_scale = 1.66533e-16
+item_name = "Wood"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_osbpe")
+
+[node name="CollisionShape2D" parent="PickupArea" index="0"]
+shape = SubResource("CircleShape2D_0ki7x")

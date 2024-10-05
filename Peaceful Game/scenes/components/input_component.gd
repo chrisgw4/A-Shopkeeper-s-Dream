@@ -6,6 +6,7 @@ class_name InputComponent
 @export var movement_component:MovementComponent
 
 signal interact()
+signal attack()
 
 func _physics_process(delta: float) -> void:
 	_get_input()
@@ -17,7 +18,9 @@ func _get_input() -> void:
 	
 	if Input.is_action_just_pressed("interact"):
 		emit_signal("interact")
-
+	
+	if Input.is_action_just_pressed("attack"):
+		emit_signal("attack")
 
 
 

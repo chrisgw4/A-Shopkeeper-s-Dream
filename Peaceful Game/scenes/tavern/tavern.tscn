@@ -1,12 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://ue8kd5hfgtfn"]
+[gd_scene load_steps=29 format=3 uid="uid://bdeatu4e5lokr"]
 
+[ext_resource type="Script" path="res://scenes/tavern/tavern.gd" id="1_am13q"]
 [ext_resource type="Texture2D" uid="uid://cs2tan3ft7vs2" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_wsdqf"]
-[ext_resource type="Texture2D" uid="uid://4nes0n4bmbgp" path="res://delete later/House_Example.png" id="2_8ielm"]
-[ext_resource type="Texture2D" uid="uid://s3u5x88fc1vi" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/wallsAndFloors_withText.png" id="2_f4nsr"]
-[ext_resource type="Texture2D" uid="uid://dqdvwub1pvjx4" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/tavenAndInn.png" id="3_fnecg"]
-[ext_resource type="Texture2D" uid="uid://btj7cfui5xveb" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/baseFurnitureAndMagicStuff.png" id="4_15j03"]
-[ext_resource type="Texture2D" uid="uid://lmglte17j73a" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/packedSpriteSheet_wallsAndFloors.png" id="5_6pp5s"]
-[ext_resource type="Texture2D" uid="uid://3ee04l2b3vny" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/animatedFireplace_4Frames.png" id="6_2tq3x"]
+[ext_resource type="Texture2D" uid="uid://s3u5x88fc1vi" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/wallsAndFloors_withText.png" id="3_4yhhq"]
+[ext_resource type="Texture2D" uid="uid://dqdvwub1pvjx4" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/tavenAndInn.png" id="4_2w06c"]
+[ext_resource type="Texture2D" uid="uid://btj7cfui5xveb" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/baseFurnitureAndMagicStuff.png" id="5_s58uo"]
+[ext_resource type="Texture2D" uid="uid://lmglte17j73a" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/packedSpriteSheet_wallsAndFloors.png" id="6_j4u28"]
+[ext_resource type="Texture2D" uid="uid://3ee04l2b3vny" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/animatedFireplace_4Frames.png" id="7_bs371"]
+[ext_resource type="PackedScene" uid="uid://bb32s6sxppxmb" path="res://scenes/drop_off_chest/chest.tscn" id="8_ujavj"]
 
 [sub_resource type="Animation" id="Animation_ndr6r"]
 resource_name = "Fireplace"
@@ -1814,7 +1815,7 @@ texture = ExtResource("1_wsdqf")
 43:49/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o1e3l"]
-texture = ExtResource("2_f4nsr")
+texture = ExtResource("3_4yhhq")
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
@@ -2225,7 +2226,7 @@ texture = ExtResource("2_f4nsr")
 35:27/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ximri"]
-texture = ExtResource("3_fnecg")
+texture = ExtResource("4_2w06c")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2516,7 +2517,7 @@ texture = ExtResource("3_fnecg")
 6:19/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kjtt1"]
-texture = ExtResource("4_15j03")
+texture = ExtResource("5_s58uo")
 17:0/0 = 0
 27:0/0 = 0
 1:1/0 = 0
@@ -2971,7 +2972,7 @@ texture = ExtResource("4_15j03")
 14:30/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ersyk"]
-texture = ExtResource("5_6pp5s")
+texture = ExtResource("6_j4u28")
 1:1/0 = 0
 2:1/0 = 0
 3:1/0 = 0
@@ -3120,7 +3121,7 @@ texture = ExtResource("5_6pp5s")
 23:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_of34u"]
-texture = ExtResource("6_2tq3x")
+texture = ExtResource("7_bs371")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3157,19 +3158,19 @@ sources/5 = SubResource("TileSetAtlasSource_of34u")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lbgd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_518nw"]
-atlas = ExtResource("6_2tq3x")
+atlas = ExtResource("7_bs371")
 region = Rect2(0, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifq60"]
-atlas = ExtResource("6_2tq3x")
+atlas = ExtResource("7_bs371")
 region = Rect2(48, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pkiv"]
-atlas = ExtResource("6_2tq3x")
+atlas = ExtResource("7_bs371")
 region = Rect2(96, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a5e54"]
-atlas = ExtResource("6_2tq3x")
+atlas = ExtResource("7_bs371")
 region = Rect2(144, 0, 48, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_klkp6"]
@@ -3192,7 +3193,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wl66"]
+size = Vector2(192, 3)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kqpi7"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aayx4"]
+radius = 7.07107
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5xeg"]
+
 [node name="Tavern" type="Node2D"]
+script = ExtResource("1_am13q")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../FirePlace")
@@ -3204,7 +3217,7 @@ libraries = {
 offset_top = 16.0
 offset_right = 856.0
 offset_bottom = 592.0
-color = Color(0, 0, 0, 1)
+color = Color(0.105882, 0.105882, 0.105882, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
@@ -3228,14 +3241,9 @@ layer_4/tile_data = PackedInt32Array(1245192, 65540, 8, 1245193, 196612, 8, 1310
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_5lbgd")
 
-[node name="HouseExample" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(304, 280)
-scale = Vector2(0.0904095, 0.100696)
-texture = ExtResource("2_8ielm")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(336, 288)
+enabled = false
 zoom = Vector2(1.3, 1.3)
 
 [node name="FirePlace" type="AnimatedSprite2D" parent="."]
@@ -3243,3 +3251,70 @@ texture_filter = 1
 position = Vector2(198, 206)
 sprite_frames = SubResource("SpriteFrames_klkp6")
 animation = &"Fireplace"
+
+[node name="SpawnPoint" type="Node2D" parent="."]
+position = Vector2(333, 383)
+
+[node name="CustomerCarpetCapture" type="Area2D" parent="."]
+position = Vector2(348, 317)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CustomerCarpetCapture"]
+position = Vector2(-7, -0.5)
+shape = SubResource("RectangleShape2D_1wl66")
+
+[node name="Chair1" type="Area2D" parent="."]
+position = Vector2(270, 271)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair1"]
+shape = SubResource("CircleShape2D_kqpi7")
+
+[node name="Chair3" type="Area2D" parent="."]
+position = Vector2(348, 271)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair3"]
+shape = SubResource("CircleShape2D_kqpi7")
+
+[node name="Chair5" type="Area2D" parent="."]
+position = Vector2(410, 271)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chair5"]
+shape = SubResource("CircleShape2D_kqpi7")
+
+[node name="CarpetToDoor" type="Area2D" parent="."]
+position = Vector2(333, 317)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarpetToDoor"]
+shape = SubResource("CircleShape2D_aayx4")
+
+[node name="DoorArea" type="Area2D" parent="."]
+position = Vector2(333, 411)
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorArea"]
+shape = SubResource("CircleShape2D_x5xeg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="CarpetPosition" type="Node2D" parent="."]
+position = Vector2(333, 317)
+
+[node name="Chest" parent="." instance=ExtResource("8_ujavj")]
+position = Vector2(382, 206)
+
+[connection signal="body_entered" from="CustomerCarpetCapture" to="." method="_on_customer_carpet_capture_body_entered"]
+[connection signal="body_entered" from="CarpetToDoor" to="." method="_on_carpet_to_door_body_entered"]
+[connection signal="body_entered" from="DoorArea" to="." method="_on_door_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
