@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7v53772j8bpy"]
+
+[ext_resource type="Script" path="res://scenes/components/attack_component.gd" id="1_tooai"]
+
+[node name="AttackComponent" type="Node" node_paths=PackedStringArray("attack_timer")]
+script = ExtResource("1_tooai")
+attack_timer = NodePath("AttackTimer")
+
+[node name="AttackTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
