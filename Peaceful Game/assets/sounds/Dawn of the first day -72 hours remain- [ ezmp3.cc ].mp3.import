@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://6tx01yudyn8i"
+path="res://.godot/imported/Dawn of the first day -72 hours remain- [ ezmp3.cc ].mp3-d361444a81fc584bfb7abc143119cad4.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Dawn of the first day -72 hours remain- [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Dawn of the first day -72 hours remain- [ ezmp3.cc ].mp3-d361444a81fc584bfb7abc143119cad4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

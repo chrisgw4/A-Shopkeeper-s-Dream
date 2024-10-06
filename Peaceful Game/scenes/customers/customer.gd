@@ -83,6 +83,8 @@ func _on_confirm_pressed() -> void:
 	$TextureRect/HFlowContainer/Cancel.hide()
 	$PlayerDetector/CollisionShape2D.set_deferred("disabled", false)
 	emit_signal("confirmed_request", item_to_want, 1, self)
+	$Menuclick.pitch_scale = 1 - randf_range(-0.4, 0.4)
+	$Menuclick.play()
 
 
 func _on_cancel_pressed() -> void:
@@ -90,6 +92,8 @@ func _on_cancel_pressed() -> void:
 	temp.global_position = global_position
 	get_tree().current_scene.add_child(temp)
 	_leave_tavern()
+	$Menuclick.pitch_scale = 1 - randf_range(-0.4, 0.4)
+	$Menuclick.play()
 
 
 func request_completed() -> void:

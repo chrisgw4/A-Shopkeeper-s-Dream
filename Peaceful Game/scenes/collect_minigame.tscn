@@ -1,11 +1,11 @@
 [gd_scene load_steps=10 format=3 uid="uid://dyy1dhfysa8tu"]
 
 [ext_resource type="Script" path="res://scenes/collect_minigame.gd" id="1_t3ynf"]
-[ext_resource type="Texture2D" uid="uid://fscfen5bm82q" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_left.png" id="1_xuu5h"]
-[ext_resource type="Texture2D" uid="uid://bmtx2uwvfb6b5" path="res://assets/sprites/Sunnyside_World_Assets/UI/greenbar_06-1.png" id="2_ttq13"]
+[ext_resource type="Texture2D" uid="uid://ehp7gcrcl1ar" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_left.png" id="1_xuu5h"]
+[ext_resource type="Texture2D" uid="uid://dodcuj5hgo2oq" path="res://assets/sprites/Sunnyside_World_Assets/UI/greenbar_06-1.png" id="2_ttq13"]
 [ext_resource type="Script" path="res://scenes/ArrowLeft.gd" id="3_wq31p"]
-[ext_resource type="Texture2D" uid="uid://bwvnvgl11njs4" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_3kbvr"]
-[ext_resource type="Texture2D" uid="uid://baqkg2ryeg57j" path="res://assets/sprites/Sunnyside_World_Assets/redbar_06-1.png.png" id="6_bj1pl"]
+[ext_resource type="Texture2D" uid="uid://ejxlk8nht0gl" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_3kbvr"]
+[ext_resource type="Texture2D" uid="uid://d4axkjjvfmo84" path="res://assets/sprites/Sunnyside_World_Assets/redbar_06-1.png.png" id="6_bj1pl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rkcx"]
 size = Vector2(17, 13)

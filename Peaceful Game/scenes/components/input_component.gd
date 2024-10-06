@@ -18,9 +18,9 @@ func _get_input() -> void:
 	
 	if Input.is_action_just_pressed("interact"):
 		emit_signal("interact")
-	
-	if Input.is_action_just_pressed("attack"):
-		emit_signal("attack")
+	#
+	#if Input.is_action_just_pressed("attack"):
+		#emit_signal("attack")
 
 
 

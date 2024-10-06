@@ -1,7 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1ghmcl32u7x6"]
+[gd_scene load_steps=7 format=3 uid="uid://d1ghmcl32u7x6"]
 
-[ext_resource type="FontFile" uid="uid://bvylw0uchwit6" path="res://assets/joystix monospace.otf" id="1_6fo7c"]
+[ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="1_6fo7c"]
 [ext_resource type="Script" path="res://scenes/UI/day_change_ui.gd" id="1_fxpy8"]
+[ext_resource type="AudioStream" uid="uid://6tx01yudyn8i" path="res://assets/sounds/Dawn of the first day -72 hours remain- [ ezmp3.cc ].mp3" id="3_8c0qe"]
+
+[sub_resource type="Animation" id="Animation_riq3i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CenterContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_50t3j"]
 resource_name = "change_day"
@@ -29,33 +57,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
-}
-
-[sub_resource type="Animation" id="Animation_riq3i"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CenterContainer:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w8xvf"]
@@ -87,3 +88,11 @@ text = "Dawn of Day 1"
 libraries = {
 "": SubResource("AnimationLibrary_w8xvf")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8c0qe")
+volume_db = 2.0
+max_distance = 1e+06
+bus = &"SoundEffects"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctbg3rbtpcdv5"]
 
 [ext_resource type="Script" path="res://scenes/UI/money_ui.gd" id="1_laelk"]
-[ext_resource type="FontFile" uid="uid://bvylw0uchwit6" path="res://assets/joystix monospace.otf" id="1_lm3e7"]
+[ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="1_lm3e7"]
 
 [node name="MoneyUI" type="Control"]
 layout_mode = 3

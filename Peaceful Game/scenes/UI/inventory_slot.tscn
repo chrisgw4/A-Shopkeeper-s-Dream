@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://fmgh1lo1ahxc"]
 
 [ext_resource type="Script" path="res://scenes/UI/inventory_slot.gd" id="1_1ku35"]
-[ext_resource type="Texture2D" uid="uid://crosohqp1p4an" path="res://assets/sprites/inventory_slot.png.png" id="1_gpn6b"]
-[ext_resource type="FontFile" uid="uid://bvylw0uchwit6" path="res://assets/joystix monospace.otf" id="4_27m8e"]
+[ext_resource type="Texture2D" uid="uid://dv3wsvresx7at" path="res://assets/sprites/inventory_slot.png.png" id="1_gpn6b"]
+[ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="4_27m8e"]
 
 [node name="InventorySlot" type="TextureRect"]
 offset_right = 40.0

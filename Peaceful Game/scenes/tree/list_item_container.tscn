@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://yibq7ih5wc1c"]
 
 [ext_resource type="Script" path="res://scenes/tree/list_item_container.gd" id="1_j1fsv"]
-[ext_resource type="FontFile" uid="uid://bvylw0uchwit6" path="res://assets/joystix monospace.otf" id="2_b05my"]
+[ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="2_b05my"]
 
 [node name="ListItemContainer" type="HFlowContainer"]
 custom_minimum_size = Vector2(64, 32)

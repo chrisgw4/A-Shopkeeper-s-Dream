@@ -1,7 +1,7 @@
 [gd_resource type="SpriteFrames" load_steps=20 format=3 uid="uid://c1n138msp8e1n"]
 
-[ext_resource type="Texture2D" uid="uid://dk5l54epa6jr" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/mophair_idle_strip9.png" id="1_wsngo"]
-[ext_resource type="Texture2D" uid="uid://ct2xjs0fhjs1s" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/mophair_run_strip8.png" id="2_hklgy"]
+[ext_resource type="Texture2D" uid="uid://2f485v63daul" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/mophair_idle_strip9.png" id="1_wsngo"]
+[ext_resource type="Texture2D" uid="uid://fc1gpqvsrf44" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/mophair_run_strip8.png" id="2_hklgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tewaf"]
 atlas = ExtResource("1_wsngo")

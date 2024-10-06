@@ -1,19 +1,20 @@
-[gd_scene load_steps=61 format=3 uid="uid://7mdk32hofwaf"]
+[gd_scene load_steps=62 format=3 uid="uid://7mdk32hofwaf"]
 
 [ext_resource type="Script" path="res://scenes/forest.gd" id="1_a4cl1"]
-[ext_resource type="Texture2D" uid="uid://bq5kgl6e7xfml" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px-1.png" id="1_y5lmg"]
+[ext_resource type="Texture2D" uid="uid://dy1mucapih5i" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px-1.png" id="1_y5lmg"]
 [ext_resource type="PackedScene" uid="uid://dhu4ts6sy5ye3" path="res://scenes/player/player.tscn" id="2_bwlj7"]
-[ext_resource type="Texture2D" uid="uid://d1es2jtjbpmte" path="res://assets/sprites/Sunnyside_World_Assets/Elements/VFX/Chimney Smoke/chimneysmoke_03_strip30.png" id="2_jxydq"]
+[ext_resource type="Texture2D" uid="uid://ca51b8u4gusgb" path="res://assets/sprites/Sunnyside_World_Assets/Elements/VFX/Chimney Smoke/chimneysmoke_03_strip30.png" id="2_jxydq"]
 [ext_resource type="PackedScene" uid="uid://bne2ac4w26k2m" path="res://scenes/tree/collect_list.tscn" id="3_b0bdy"]
 [ext_resource type="PackedScene" uid="uid://biyyhh1kjx02l" path="res://scenes/UI/inventory.tscn" id="4_8utqq"]
-[ext_resource type="Texture2D" uid="uid://b0ra313xjdbxo" path="res://assets/sprites/Sunnyside_World_Assets/Keyboard White-1.png (3).png" id="5_qsxj3"]
-[ext_resource type="Texture2D" uid="uid://bwvnvgl11njs4" path="res://assets/sprites/Keyboard White-1.png (5).png" id="6_3kawe"]
+[ext_resource type="Texture2D" uid="uid://bs5a3o5hm8b46" path="res://assets/sprites/Sunnyside_World_Assets/Keyboard White-1.png (3).png" id="5_qsxj3"]
+[ext_resource type="Texture2D" uid="uid://ejxlk8nht0gl" path="res://assets/sprites/Keyboard White-1.png (5).png" id="6_3kawe"]
 [ext_resource type="PackedScene" uid="uid://d1ghmcl32u7x6" path="res://scenes/UI/day_change_ui.tscn" id="7_6gmej"]
 [ext_resource type="PackedScene" uid="uid://ctbg3rbtpcdv5" path="res://scenes/UI/money_ui.tscn" id="7_15xv7"]
 [ext_resource type="PackedScene" uid="uid://b370uslev2sa3" path="res://scenes/bed.tscn" id="8_vkukx"]
 [ext_resource type="PackedScene" uid="uid://bdeatu4e5lokr" path="res://scenes/tavern/tavern.tscn" id="10_lpld5"]
-[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="11_1e07q"]
-[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="12_try26"]
+[ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="11_1e07q"]
+[ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="12_try26"]
+[ext_resource type="AudioStream" uid="uid://vffpo8d7r33g" path="res://assets/music/road-trip-12876.mp3" id="15_6t4xc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhq33"]
 size = Vector2(66, 11)
@@ -6079,7 +6080,15 @@ libraries = {
 "": SubResource("AnimationLibrary_08wu7")
 }
 
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_6t4xc")
+volume_db = -5.0
+max_distance = 100000.0
+bus = &"Music"
+
+[connection signal="menu_done" from="DayChangeUI" to="." method="_on_day_change_ui_menu_done"]
 [connection signal="body_entered" from="Tavern/TavernLeave" to="." method="_on_tavern_leave_body_entered"]
 [connection signal="bed_used" from="Tavern/Bed" to="." method="_on_bed_bed_used"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
+[connection signal="finished" from="Music" to="." method="_on_music_finished"]

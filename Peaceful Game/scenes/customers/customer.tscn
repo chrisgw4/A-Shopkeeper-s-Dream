@@ -1,16 +1,17 @@
-[gd_scene load_steps=36 format=3 uid="uid://ccv5kc62oaj4y"]
+[gd_scene load_steps=37 format=3 uid="uid://ccv5kc62oaj4y"]
 
 [ext_resource type="Script" path="res://scenes/customers/customer.gd" id="1_a43pt"]
 [ext_resource type="PackedScene" uid="uid://dfebh4uxessy6" path="res://scenes/components/state_machine.tscn" id="1_fwpeo"]
-[ext_resource type="Texture2D" uid="uid://d1f42ogaw32h8" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/base_idle_strip9.png" id="1_glftu"]
-[ext_resource type="Texture2D" uid="uid://dbaqen6rkrju0" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/base_run_strip8.png" id="2_02i6u"]
+[ext_resource type="Texture2D" uid="uid://dssgys3ety6so" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/base_idle_strip9.png" id="1_glftu"]
+[ext_resource type="Texture2D" uid="uid://v0ae243nluv2" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/base_run_strip8.png" id="2_02i6u"]
 [ext_resource type="PackedScene" uid="uid://dlhn8vbebf261" path="res://scenes/components/movement_component.tscn" id="2_2y2wa"]
 [ext_resource type="SpriteFrames" uid="uid://ctx4yx6h2ibsr" path="res://scenes/customers/customer_short_hair.tres" id="3_8lhxc"]
 [ext_resource type="Script" path="res://scenes/customers/customer_state_machine.gd" id="6_6simi"]
-[ext_resource type="Texture2D" uid="uid://xlhp8ajmqyld" path="res://assets/sprites/3.png" id="8_logyf"]
-[ext_resource type="Texture2D" uid="uid://bab3aa0xu55yw" path="res://assets/sprites/Sunnyside_World_Assets/UI/confirm.png" id="9_1gh0q"]
-[ext_resource type="Texture2D" uid="uid://cekr553q2fai6" path="res://assets/sprites/Sunnyside_World_Assets/UI/cancel.png" id="10_6ax4s"]
-[ext_resource type="Texture2D" uid="uid://dudyjxkvq3yvn" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/wood.png" id="11_ipwio"]
+[ext_resource type="Texture2D" uid="uid://c0xxdrvpvnlge" path="res://assets/sprites/3.png" id="8_logyf"]
+[ext_resource type="Texture2D" uid="uid://b5q8snt82q52b" path="res://assets/sprites/Sunnyside_World_Assets/UI/confirm.png" id="9_1gh0q"]
+[ext_resource type="Texture2D" uid="uid://y1uvm78hvycr" path="res://assets/sprites/Sunnyside_World_Assets/UI/cancel.png" id="10_6ax4s"]
+[ext_resource type="Texture2D" uid="uid://wpex1dgphwp0" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/wood.png" id="11_ipwio"]
+[ext_resource type="AudioStream" uid="uid://b6j0mi3mxl0l4" path="res://assets/sounds/menu_sound.wav" id="12_s1i2s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwoke"]
 atlas = ExtResource("1_glftu")
@@ -451,6 +452,11 @@ shape = SubResource("CircleShape2D_s26ec")
 position = Vector2(0, -21.5)
 shape = SubResource("RectangleShape2D_ujs0g")
 disabled = true
+
+[node name="Menuclick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_s1i2s")
+volume_db = -10.0
+bus = &"SoundEffects"
 
 [connection signal="start_moving" from="MovementComponent" to="." method="_on_movement_component_start_moving"]
 [connection signal="stop_moving" from="MovementComponent" to="." method="_on_movement_component_stop_moving"]

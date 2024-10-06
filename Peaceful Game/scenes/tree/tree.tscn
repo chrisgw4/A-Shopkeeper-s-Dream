@@ -1,11 +1,11 @@
 [gd_scene load_steps=45 format=3 uid="uid://b8q187ed64v33"]
 
 [ext_resource type="Script" path="res://scenes/tree/tree.gd" id="1_3g6uh"]
-[ext_resource type="Texture2D" uid="uid://bvs4jyb6kd5se" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Plants/spr_deco_tree_01_strip4.png" id="1_o1sp1"]
+[ext_resource type="Texture2D" uid="uid://dxtbga3nn6ga1" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Plants/spr_deco_tree_01_strip4.png" id="1_o1sp1"]
 [ext_resource type="PackedScene" uid="uid://dyy1dhfysa8tu" path="res://scenes/collect_minigame.tscn" id="3_gyg7q"]
-[ext_resource type="Texture2D" uid="uid://mb8uy0ju7k5a" path="res://assets/sprites/Sunnyside_World_Assets/leaves_hit.png" id="4_w6s5c"]
-[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="5_igjls"]
-[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="6_80l32"]
+[ext_resource type="Texture2D" uid="uid://dpppxqkgc1h58" path="res://assets/sprites/Sunnyside_World_Assets/leaves_hit.png" id="4_w6s5c"]
+[ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="5_igjls"]
+[ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="6_80l32"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6qy0j"]
 atlas = ExtResource("1_o1sp1")

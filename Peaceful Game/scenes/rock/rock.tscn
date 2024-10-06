@@ -1,10 +1,10 @@
 [gd_scene load_steps=16 format=3 uid="uid://db2ggd4o0fcu2"]
 
 [ext_resource type="Script" path="res://scenes/rock/rock.gd" id="1_auysr"]
-[ext_resource type="Texture2D" uid="uid://b1erx4xpbetjn" path="res://assets/sprites/Sunnyside_World_Assets/spr_tileset_sunnysideworld_16px (1).png" id="1_ls1tw"]
+[ext_resource type="Texture2D" uid="uid://cf4u7ffc7c1fo" path="res://assets/sprites/Sunnyside_World_Assets/spr_tileset_sunnysideworld_16px (1).png" id="1_ls1tw"]
 [ext_resource type="PackedScene" uid="uid://b8omxkkkp8pw4" path="res://scenes/rock/minigame_spam.tscn" id="2_kgk3r"]
-[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="4_82rmj"]
-[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_7srm8"]
+[ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="4_82rmj"]
+[ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_7srm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlxg0"]
 atlas = ExtResource("1_ls1tw")

@@ -22,8 +22,6 @@ func add_item(item:Item) -> void:
 	$TextureRect.texture = item.get_texture()
 
 func remove_item(item:Item) -> void:
-	print(item)
-	print(count)
 	if item.item_name == item_name:
 		count -= 1
 		return

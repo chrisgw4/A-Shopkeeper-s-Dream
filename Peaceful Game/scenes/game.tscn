@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dhu4ts6sy5ye3" path="res://scenes/player/player.tscn" id="1_wull3"]
 [ext_resource type="PackedScene" uid="uid://biyyhh1kjx02l" path="res://scenes/UI/inventory.tscn" id="2_2o6tr"]
-[ext_resource type="Texture2D" uid="uid://b0ra313xjdbxo" path="res://assets/sprites/Sunnyside_World_Assets/Keyboard White-1.png (3).png" id="4_efsu3"]
+[ext_resource type="Texture2D" uid="uid://bs5a3o5hm8b46" path="res://assets/sprites/Sunnyside_World_Assets/Keyboard White-1.png (3).png" id="4_efsu3"]
 [ext_resource type="PackedScene" uid="uid://bne2ac4w26k2m" path="res://scenes/tree/collect_list.tscn" id="5_s80cb"]
-[ext_resource type="Texture2D" uid="uid://bwvnvgl11njs4" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_wu17k"]
+[ext_resource type="Texture2D" uid="uid://ejxlk8nht0gl" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_wu17k"]
 [ext_resource type="PackedScene" uid="uid://ctbg3rbtpcdv5" path="res://scenes/UI/money_ui.tscn" id="7_3mi00"]
 [ext_resource type="PackedScene" uid="uid://bdeatu4e5lokr" path="res://scenes/tavern/tavern.tscn" id="9_13buh"]
 [ext_resource type="PackedScene" uid="uid://db2ggd4o0fcu2" path="res://scenes/rock/rock.tscn" id="9_ddd4x"]

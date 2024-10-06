@@ -7,7 +7,7 @@ extends StateMachine
 func _ready() -> void:
 	_add_state("run")
 	_add_state("idle")
-	_add_state("attack")
+	#_add_state("attack")
 	_add_state("axe")
 	_add_state("mine")
 	_add_state("reel")

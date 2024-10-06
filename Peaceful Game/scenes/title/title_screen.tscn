@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://7oxpo3psb7s1"]
+[gd_scene load_steps=15 format=3 uid="uid://7oxpo3psb7s1"]
 
 [ext_resource type="Script" path="res://scenes/title/title_screen.gd" id="1_kxva1"]
-[ext_resource type="Texture2D" uid="uid://bqkg377duj20h" path="res://assets/sprites/Bodacious Games Logo.png" id="1_p7mm7"]
-[ext_resource type="Texture2D" uid="uid://ckftebhq0sjec" path="res://assets/sprites/Title Background.png" id="1_xu3h1"]
-[ext_resource type="Texture2D" uid="uid://dy3vf8auytpdt" path="res://assets/sprites/Presents.png" id="2_edhxl"]
-[ext_resource type="Texture2D" uid="uid://bsdavfgohtqoj" path="res://assets/sprites/ASG Logo.png" id="2_hhuo5"]
-[ext_resource type="Texture2D" uid="uid://3bkg0bgmnqcf" path="res://assets/sprites/Sound Effect.png" id="2_u715v"]
-[ext_resource type="Texture2D" uid="uid://qwgbhqprnl8p" path="res://assets/sprites/plaaayyy.png" id="6_3a71t"]
-[ext_resource type="Texture2D" uid="uid://dujq8fe4tow8y" path="res://assets/sprites/plaaayyy_click.png" id="7_xnicn"]
-[ext_resource type="Texture2D" uid="uid://dhm364nk7h0k0" path="res://assets/sprites/Music.png" id="9_f4xh3"]
+[ext_resource type="Texture2D" uid="uid://d3fsmqmamhxry" path="res://assets/sprites/Bodacious Games Logo.png" id="1_p7mm7"]
+[ext_resource type="Texture2D" uid="uid://d1cb80jkk5o3m" path="res://assets/sprites/Title Background.png" id="1_xu3h1"]
+[ext_resource type="Texture2D" uid="uid://s6d7qo4dffwb" path="res://assets/sprites/Presents.png" id="2_edhxl"]
+[ext_resource type="Texture2D" uid="uid://cg2u5656ti3pv" path="res://assets/sprites/ASG Logo.png" id="2_hhuo5"]
+[ext_resource type="Texture2D" uid="uid://cewjk6jf77ewp" path="res://assets/sprites/Sound Effect.png" id="2_u715v"]
+[ext_resource type="Texture2D" uid="uid://2yjuk1as45vb" path="res://assets/sprites/plaaayyy.png" id="6_3a71t"]
+[ext_resource type="Texture2D" uid="uid://dgwsbi0sg57d7" path="res://assets/sprites/plaaayyy_click.png" id="7_xnicn"]
+[ext_resource type="Texture2D" uid="uid://bpjpk3ynir1ya" path="res://assets/sprites/Music.png" id="9_f4xh3"]
+[ext_resource type="AudioStream" uid="uid://bgxgl2o48s205" path="res://assets/music/gentle-fields-194622.mp3" id="10_55pdm"]
 
 [sub_resource type="Animation" id="Animation_2hsy4"]
 length = 0.001
@@ -147,7 +148,7 @@ tracks/0/path = NodePath("ColorRect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 2.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -159,7 +160,7 @@ tracks/1/path = NodePath("ColorRect:color")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(1.7, 2.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -171,7 +172,7 @@ tracks/2/path = NodePath("BD Logo:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(1.7, 2.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -183,7 +184,7 @@ tracks/3/path = NodePath("Presents:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(1.7, 2.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -202,19 +203,22 @@ script = ExtResource("1_kxva1")
 [node name="TextureRect3" type="TextureRect" parent="."]
 z_index = 1
 offset_left = 268.0
-offset_top = 331.0
+offset_top = 322.0
 offset_right = 571.0
-offset_bottom = 376.0
+offset_bottom = 367.0
 scale = Vector2(0.364243, 0.364243)
 texture = ExtResource("2_u715v")
 
-[node name="HSlider2" type="HSlider" parent="."]
+[node name="SoundEffects" type="HSlider" parent="."]
 z_index = 1
 custom_minimum_size = Vector2(200, 2.08165e-12)
 offset_left = 221.0
-offset_top = 347.0
+offset_top = 338.0
 offset_right = 421.0
-offset_bottom = 363.0
+offset_bottom = 354.0
+max_value = 1.0
+step = 0.001
+value = 0.5
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = 1
@@ -231,6 +235,7 @@ offset_left = 1922.0
 offset_top = -1235.0
 offset_right = 2884.0
 offset_bottom = -674.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="BG" type="TextureRect" parent="."]
@@ -239,6 +244,7 @@ offset_top = -2.0
 offset_right = 2469.0
 offset_bottom = 1416.0
 scale = Vector2(0.271971, 0.271971)
+mouse_filter = 2
 texture = ExtResource("1_xu3h1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -248,6 +254,7 @@ offset_left = -254.0
 offset_top = -33.0
 offset_right = 708.0
 offset_bottom = 528.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="BD Logo" type="TextureRect" parent="."]
@@ -257,6 +264,7 @@ offset_top = -1.0
 offset_right = 1910.0
 offset_bottom = 1079.0
 scale = Vector2(0.333201, 0.333201)
+mouse_filter = 2
 texture = ExtResource("1_p7mm7")
 
 [node name="FadeToBlack" type="AnimationPlayer" parent="."]
@@ -275,23 +283,36 @@ texture = ExtResource("2_edhxl")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 offset_left = 275.0
-offset_top = 258.0
+offset_top = 242.0
 offset_right = 357.0
-offset_bottom = 300.0
+offset_bottom = 284.0
 texture_normal = ExtResource("6_3a71t")
 texture_pressed = ExtResource("7_xnicn")
 
-[node name="HSlider" type="HSlider" parent="."]
+[node name="MusicEffects" type="HSlider" parent="."]
 custom_minimum_size = Vector2(200, 2.08165e-12)
 offset_left = 221.0
-offset_top = 316.0
+offset_top = 304.0
 offset_right = 421.0
-offset_bottom = 332.0
+offset_bottom = 320.0
+max_value = 1.0
+step = 0.001
+value = 0.5
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 offset_left = 292.0
-offset_top = 302.0
+offset_top = 290.0
 offset_right = 449.0
-offset_bottom = 347.0
+offset_bottom = 335.0
 scale = Vector2(0.364243, 0.364243)
 texture = ExtResource("9_f4xh3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_55pdm")
+autoplay = true
+bus = &"Music"
+
+[connection signal="value_changed" from="SoundEffects" to="." method="_on_sound_effects_value_changed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="value_changed" from="MusicEffects" to="." method="_on_music_effects_value_changed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]

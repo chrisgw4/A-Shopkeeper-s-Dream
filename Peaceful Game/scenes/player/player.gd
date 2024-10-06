@@ -44,12 +44,16 @@ func _add_to_inventory(item:Item) -> void:
 		if item.item_name == i.item_name:
 			if inventory[i] < 3:
 				inventory[i] += 1
+				$PickUpSound.pitch_scale = 1 - randf_range(-0.4, 0.4)
+				$PickUpSound.play()
 			return
 	
 	if len(inventory) >= 3:
 		return
 	
 	inventory[item] = 1
+	$PickUpSound.pitch_scale = 1 - randf_range(-0.4, 0.4)
+	$PickUpSound.play()
 	
 	pass
 
@@ -96,6 +100,10 @@ func _enter_idle_state() -> void:
 
 func _enter_run_state() -> void:
 	state_machine._enter_state("run")
+
+func _play_chop_sound() -> void:
+	$WoodChop.play()
+
 
 func _physics_process(delta: float) -> void:
 	

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dr86d6gu1wax7"]
 
 [ext_resource type="PackedScene" uid="uid://b5kn8cvix6scs" path="res://scenes/pick_ups/item.tscn" id="1_ncmh1"]
-[ext_resource type="Texture2D" uid="uid://cfj56p7mscaif" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/fish.png" id="2_gucfs"]
+[ext_resource type="Texture2D" uid="uid://dd0ntwqmjcs44" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/fish.png" id="2_gucfs"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m2vvu"]
 animations = [{

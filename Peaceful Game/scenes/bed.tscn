@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://b370uslev2sa3"]
 
 [ext_resource type="Script" path="res://scenes/bed.gd" id="1_fqbr0"]
-[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="1_n4nfh"]
-[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="2_iboq2"]
-[ext_resource type="Texture2D" uid="uid://c5v06nis3331s" path="res://assets/sprites/baseFurnitureAndMagicStuff-1.png.png" id="3_fweau"]
-[ext_resource type="FontFile" uid="uid://bvylw0uchwit6" path="res://assets/joystix monospace.otf" id="5_n0hih"]
+[ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="1_n4nfh"]
+[ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="2_iboq2"]
+[ext_resource type="Texture2D" uid="uid://dvjchvvj5l8hm" path="res://assets/sprites/baseFurnitureAndMagicStuff-1.png.png" id="3_fweau"]
+[ext_resource type="FontFile" uid="uid://lbrwpoagy426" path="res://assets/joystix monospace.otf" id="5_n0hih"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_katgh"]
 animations = [{

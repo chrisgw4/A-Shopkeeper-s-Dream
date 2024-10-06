@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cyl2amrrxrq3w"]
 
 [ext_resource type="PackedScene" uid="uid://b5kn8cvix6scs" path="res://scenes/pick_ups/item.tscn" id="1_1b228"]
-[ext_resource type="Texture2D" uid="uid://dudyjxkvq3yvn" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/wood.png" id="2_biwec"]
+[ext_resource type="Texture2D" uid="uid://wpex1dgphwp0" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/wood.png" id="2_biwec"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_osbpe"]
 animations = [{

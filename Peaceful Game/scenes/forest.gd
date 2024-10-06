@@ -11,8 +11,12 @@ var fish_scene:PackedScene = preload("res://scenes/fishing/fishing_spot.tscn")
 @export var day_change_ui:DayChangeUI
 
 
+func start_music() -> void:
+	$Music.play()
+
 func _ready() -> void:
 	$Smoke/AnimationPlayer.play("Smoke")
+	
 	
 	for i in $RockSpawners.get_children():
 		var temp = rock_scene.instantiate()
@@ -84,7 +88,20 @@ func _respawn_objects() -> void:
 
 
 func _on_bed_bed_used() -> void:
+	$Music.stream_paused = true
 	player.health_component.damage(-player.health_component.max_hp)
 	$Tavern.remove_customers()
 	day_change_ui.new_day()
 	_respawn_objects()
+	
+	await day_change_ui.get_node("AnimationPlayer").animation_finished
+	
+	$Music.stream_paused = true
+
+
+func _on_music_finished() -> void:
+	$Music.play()
+
+
+func _on_day_change_ui_menu_done() -> void:
+	start_music()

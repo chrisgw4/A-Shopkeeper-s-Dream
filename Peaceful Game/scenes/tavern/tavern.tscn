@@ -1,12 +1,12 @@
 [gd_scene load_steps=29 format=3 uid="uid://bdeatu4e5lokr"]
 
 [ext_resource type="Script" path="res://scenes/tavern/tavern.gd" id="1_am13q"]
-[ext_resource type="Texture2D" uid="uid://cs2tan3ft7vs2" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_wsdqf"]
-[ext_resource type="Texture2D" uid="uid://s3u5x88fc1vi" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/wallsAndFloors_withText.png" id="3_4yhhq"]
-[ext_resource type="Texture2D" uid="uid://dqdvwub1pvjx4" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/tavenAndInn.png" id="4_2w06c"]
-[ext_resource type="Texture2D" uid="uid://btj7cfui5xveb" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/baseFurnitureAndMagicStuff.png" id="5_s58uo"]
-[ext_resource type="Texture2D" uid="uid://lmglte17j73a" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/packedSpriteSheet_wallsAndFloors.png" id="6_j4u28"]
-[ext_resource type="Texture2D" uid="uid://3ee04l2b3vny" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/animatedFireplace_4Frames.png" id="7_bs371"]
+[ext_resource type="Texture2D" uid="uid://cplktsqcu1t6x" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px.png" id="1_wsdqf"]
+[ext_resource type="Texture2D" uid="uid://d14khm2piu7ky" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/wallsAndFloors_withText.png" id="3_4yhhq"]
+[ext_resource type="Texture2D" uid="uid://bbvlucf6nhfv8" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/tavenAndInn.png" id="4_2w06c"]
+[ext_resource type="Texture2D" uid="uid://ccw7lmk7gg4vf" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/baseFurnitureAndMagicStuff.png" id="5_s58uo"]
+[ext_resource type="Texture2D" uid="uid://d3g5edoqhwwo5" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/packedSpriteSheet_wallsAndFloors.png" id="6_j4u28"]
+[ext_resource type="Texture2D" uid="uid://dxejui3m2tyob" path="res://assets/sprites/CBL(indoors- base assets, magical stuff, tavern, inn_updated_5)/16x16/animatedFireplace_4Frames.png" id="7_bs371"]
 [ext_resource type="PackedScene" uid="uid://bb32s6sxppxmb" path="res://scenes/drop_off_chest/chest.tscn" id="8_ujavj"]
 
 [sub_resource type="Animation" id="Animation_ndr6r"]

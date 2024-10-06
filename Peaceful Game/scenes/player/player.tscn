@@ -1,34 +1,39 @@
-[gd_scene load_steps=279 format=3 uid="uid://dhu4ts6sy5ye3"]
+[gd_scene load_steps=284 format=3 uid="uid://dhu4ts6sy5ye3"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6gmfq"]
-[ext_resource type="Texture2D" uid="uid://dbaqen6rkrju0" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/base_run_strip8.png" id="2_6ytto"]
-[ext_resource type="Texture2D" uid="uid://d1f42ogaw32h8" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/base_idle_strip9.png" id="2_483mr"]
-[ext_resource type="Texture2D" uid="uid://k4u84swqp2om" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/base_attack_strip10.png" id="2_djegx"]
+[ext_resource type="Texture2D" uid="uid://v0ae243nluv2" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/base_run_strip8.png" id="2_6ytto"]
+[ext_resource type="Texture2D" uid="uid://dssgys3ety6so" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/base_idle_strip9.png" id="2_483mr"]
+[ext_resource type="Texture2D" uid="uid://c2rqo6h86gvkd" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/base_attack_strip10.png" id="2_djegx"]
 [ext_resource type="PackedScene" uid="uid://dhe2yj77tdlaj" path="res://scenes/components/health_component.tscn" id="2_igg06"]
-[ext_resource type="Texture2D" uid="uid://uc2ysjpfpt6o" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/AXE/base_axe_strip10.png" id="3_c7vxf"]
-[ext_resource type="Texture2D" uid="uid://d4gpf1arihewe" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/spikeyhair_run_strip8.png" id="3_dyo2m"]
+[ext_resource type="Texture2D" uid="uid://dnwwpwd7ki540" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/AXE/base_axe_strip10.png" id="3_c7vxf"]
+[ext_resource type="Texture2D" uid="uid://dvy7cf0qbp0xv" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/spikeyhair_run_strip8.png" id="3_dyo2m"]
 [ext_resource type="PackedScene" uid="uid://c5yg6pn0iwwnv" path="res://scenes/components/input_component.tscn" id="3_lewuj"]
 [ext_resource type="PackedScene" uid="uid://b7v53772j8bpy" path="res://scenes/components/attack_component.tscn" id="4_ca56x"]
-[ext_resource type="Texture2D" uid="uid://c7b8ndkd6tu3v" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/CASTING/base_casting_strip15.png" id="4_d6371"]
-[ext_resource type="Texture2D" uid="uid://bessb0trfm3a2" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/spikeyhair_idle_strip9.png" id="4_uqvuf"]
+[ext_resource type="Texture2D" uid="uid://cr0atmvxsqujs" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/CASTING/base_casting_strip15.png" id="4_d6371"]
+[ext_resource type="Texture2D" uid="uid://i8jk8varu4j1" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/spikeyhair_idle_strip9.png" id="4_uqvuf"]
 [ext_resource type="PackedScene" uid="uid://dlhn8vbebf261" path="res://scenes/components/movement_component.tscn" id="5_fetfh"]
-[ext_resource type="Texture2D" uid="uid://dbeb8pyef4iy5" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/spikeyhair_attack_strip10.png" id="5_gkdyt"]
-[ext_resource type="Texture2D" uid="uid://bjcb33i7vqwj8" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/REELING/base_reeling_strip13.png" id="5_tcde2"]
-[ext_resource type="Texture2D" uid="uid://5tk5bxxrlrpk" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/MINING/base_mining_strip10.png" id="6_ikrnu"]
-[ext_resource type="Texture2D" uid="uid://0svoiar3nqo7" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/AXE/spikeyhair_axe_strip10.png" id="7_rann1"]
-[ext_resource type="Texture2D" uid="uid://cbqsfr0t8vnhc" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/WAITING/base_waiting_strip9.png" id="8_h3vpt"]
-[ext_resource type="Texture2D" uid="uid://beoctakvo6e4w" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/tools_attack_strip10.png" id="8_swukp"]
+[ext_resource type="Texture2D" uid="uid://c6bgrngq6gaw" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/spikeyhair_attack_strip10.png" id="5_gkdyt"]
+[ext_resource type="Texture2D" uid="uid://c0x0qtufiuxy2" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/REELING/base_reeling_strip13.png" id="5_tcde2"]
+[ext_resource type="Texture2D" uid="uid://bvo6keuakidbb" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/MINING/base_mining_strip10.png" id="6_ikrnu"]
+[ext_resource type="Texture2D" uid="uid://dqr68wpufm0br" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/AXE/spikeyhair_axe_strip10.png" id="7_rann1"]
+[ext_resource type="Texture2D" uid="uid://cecyb8ixxj4wc" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/WAITING/base_waiting_strip9.png" id="8_h3vpt"]
+[ext_resource type="Texture2D" uid="uid://drluhnp1rcfj" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/tools_attack_strip10.png" id="8_swukp"]
 [ext_resource type="PackedScene" uid="uid://dfebh4uxessy6" path="res://scenes/components/state_machine.tscn" id="8_t7b3c"]
 [ext_resource type="Script" path="res://scenes/player/player_state_machine.gd" id="9_pi7qq"]
-[ext_resource type="Texture2D" uid="uid://dano6p8hs5ail" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/AXE/tools_axe_strip10.png" id="10_0it6u"]
-[ext_resource type="Texture2D" uid="uid://bsc5l2nmqhkfh" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/CASTING/spikeyhair_casting_strip15.png" id="10_vyf8p"]
-[ext_resource type="Texture2D" uid="uid://2rxv1jameboe" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/REELING/tools_reeling_strip13.png" id="12_1fy6o"]
-[ext_resource type="Texture2D" uid="uid://jrem1ej10n2m" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/REELING/spikeyhair_reeling_strip13.png" id="13_ee3ud"]
-[ext_resource type="Texture2D" uid="uid://c6oirv8lhnqkm" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/CASTING/tools_casting_strip15.png" id="14_mdiow"]
-[ext_resource type="Texture2D" uid="uid://cx415l0lvmbtv" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/MINING/spikeyhair_mining_strip10.png" id="14_mq2qh"]
-[ext_resource type="Texture2D" uid="uid://dvvuqvm60gx6l" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/WAITING/spikeyhair_waiting_strip9.png" id="15_w16a8"]
-[ext_resource type="Texture2D" uid="uid://cxeh7qsmjfabl" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/MINING/tools_mining_strip10.png" id="20_2geyp"]
-[ext_resource type="Texture2D" uid="uid://ctcc2gx72dxb5" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/WAITING/tools_waiting_strip9.png" id="20_kbfja"]
+[ext_resource type="Texture2D" uid="uid://n3ninqva54uc" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/AXE/tools_axe_strip10.png" id="10_0it6u"]
+[ext_resource type="Texture2D" uid="uid://cjbijahvrsh2v" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/CASTING/spikeyhair_casting_strip15.png" id="10_vyf8p"]
+[ext_resource type="Texture2D" uid="uid://bmbhr317pbr0l" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/REELING/tools_reeling_strip13.png" id="12_1fy6o"]
+[ext_resource type="Texture2D" uid="uid://j1jdyqod22r0" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/REELING/spikeyhair_reeling_strip13.png" id="13_ee3ud"]
+[ext_resource type="Texture2D" uid="uid://caowbxsesvqt8" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/CASTING/tools_casting_strip15.png" id="14_mdiow"]
+[ext_resource type="Texture2D" uid="uid://j0wbd2cdsk5s" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/MINING/spikeyhair_mining_strip10.png" id="14_mq2qh"]
+[ext_resource type="Texture2D" uid="uid://wtpj6ee6fbgu" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/WAITING/spikeyhair_waiting_strip9.png" id="15_w16a8"]
+[ext_resource type="Texture2D" uid="uid://bocjviuwm1645" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/MINING/tools_mining_strip10.png" id="20_2geyp"]
+[ext_resource type="Texture2D" uid="uid://ctd63vw5hhkln" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/WAITING/tools_waiting_strip9.png" id="20_kbfja"]
+[ext_resource type="AudioStream" uid="uid://cvd00tqxqoiwi" path="res://assets/sounds/wood_chop.wav" id="30_uoixr"]
+[ext_resource type="AudioStream" uid="uid://8g0gqigc4v53" path="res://assets/sounds/pick_hit.wav" id="31_rvu1p"]
+[ext_resource type="AudioStream" uid="uid://drva124j1r1cc" path="res://assets/sounds/water_splash.wav" id="32_tti4m"]
+[ext_resource type="AudioStream" uid="uid://byh7a8yt5fpkq" path="res://assets/sounds/reeling.wav" id="33_0ck7x"]
+[ext_resource type="AudioStream" uid="uid://bikury28ba274" path="res://assets/sounds/plop.wav" id="34_08yak"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_icf36"]
 atlas = ExtResource("2_djegx")
@@ -1856,6 +1861,42 @@ tracks/4/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PickHit:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WaterSplash:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Reeling:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_8lwto"]
 resource_name = "attack"
@@ -2030,6 +2071,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_chop_sound"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_0uitw"]
 resource_name = "cast"
@@ -2114,6 +2169,18 @@ tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WaterSplash:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
@@ -2270,6 +2337,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PickHit:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_iljv5"]
 resource_name = "reel"
@@ -2357,6 +2436,18 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Reeling:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_15uu6"]
@@ -2532,7 +2623,6 @@ health_component = NodePath("HealthComponent")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_larmi")
 animation = &"idle"
-frame = 1
 
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -2572,3 +2662,23 @@ animation_player = NodePath("../BodyAnimationPlayer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_a1hju")
+
+[node name="WoodChop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("30_uoixr")
+bus = &"SoundEffects"
+
+[node name="PickHit" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_rvu1p")
+bus = &"SoundEffects"
+
+[node name="WaterSplash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_tti4m")
+bus = &"SoundEffects"
+
+[node name="Reeling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("33_0ck7x")
+bus = &"SoundEffects"
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_08yak")
+bus = &"SoundEffects"
