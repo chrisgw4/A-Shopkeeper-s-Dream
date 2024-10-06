@@ -10,7 +10,7 @@ static var hair_styles:Array[SpriteFrames] = [preload("res://scenes/customers/cu
 @export var state_machine:StateMachine
 @export var movement_component:MovementComponent
 
-static var items_to_want:Array[PackedScene] = [preload("res://scenes/pick_ups/wood.tscn"), preload("res://scenes/pick_ups/rock.tscn")]
+static var items_to_want:Array[PackedScene] = [preload("res://scenes/pick_ups/wood.tscn"), preload("res://scenes/pick_ups/rock.tscn"), preload("res://scenes/pick_ups/fish.tscn")]
 var item_to_want:Item
 @onready var item_texture:TextureRect = $TextureRect/TextureRect
 
@@ -104,6 +104,8 @@ func request_completed() -> void:
 		emit_signal("completed_request", 25)
 	elif item_to_want.item_name == "Wood":
 		emit_signal("completed_request", 10)
+	elif item_to_want.item_name == "Fish":
+		emit_signal("completed_request", 3)
 
 
 func _on_movement_component_start_moving() -> void:

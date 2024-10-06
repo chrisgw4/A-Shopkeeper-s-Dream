@@ -1,5 +1,6 @@
 extends Node2D
-class_name fishing_spot
+class_name FishingObject
+
 var fish_scene:PackedScene = preload("res://scenes/pick_ups/rock.tscn")
 
 signal died
@@ -8,7 +9,7 @@ signal restrict_movement()
 
 @export var mini_game:MinigameFish
 
-
+var fish_item_scene:PackedScene = preload("res://scenes/pick_ups/fish.tscn")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,14 +19,12 @@ func _ready():
 	mini_game.connect("arrow", _edit_player_stamina)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+
 	
 
 func _edit_player_stamina() -> void:
 	if player:
-		player.health_component.damage(10)
+		player.health_component.damage(1.25)
 
 
 
@@ -63,7 +62,27 @@ func _on_player_detector_body_exited(p:Player) -> void:
 	died.disconnect(p.unrestrict_movement)
 	player = null
 
+
+var fished:bool = false
+
 func _fished() -> void:
+	if fished:
+		return
+	fished = true
+	emit_signal("restrict_movement", "reel")
+	
+	await player.get_node("BodyAnimationPlayer").animation_finished
+	
+	player.unrestrict_movement()
+	
+	for i in range(3):
+		var temp = fish_item_scene.instantiate()
+		temp.global_position = global_position
+		temp.lower_bound = global_position.y + randi_range(12, 24)
+		temp.linear_velocity = Vector2(randf_range(-100, -80), randf_range(-350, -300))
+		temp.gravity_scale = 1
+		get_tree().current_scene.get_node("TileMap").add_child(temp)
+	
 	mini_game.visible = false
 	emit_signal("died")
 	queue_free()

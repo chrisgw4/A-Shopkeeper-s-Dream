@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr86d6gu1wax7"]
+
+[ext_resource type="PackedScene" uid="uid://b5kn8cvix6scs" path="res://scenes/pick_ups/item.tscn" id="1_ncmh1"]
+[ext_resource type="Texture2D" uid="uid://cfj56p7mscaif" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/fish.png" id="2_gucfs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m2vvu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gucfs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opmva"]
+radius = 8.0
+
+[node name="Fish" instance=ExtResource("1_ncmh1")]
+item_name = "Fish"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_m2vvu")
+
+[node name="CollisionShape2D" parent="PickupArea" index="0"]
+shape = SubResource("CircleShape2D_opmva")

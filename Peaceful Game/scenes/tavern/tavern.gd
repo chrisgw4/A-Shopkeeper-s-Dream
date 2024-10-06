@@ -115,3 +115,14 @@ func _on_door_area_body_entered(customer: Customer) -> void:
 	
 	await tween.finished
 	customer.queue_free()
+
+func remove_customers() -> void:
+	for i in get_tree().current_scene.get_children():
+		if i is Customer:
+			i.queue_free()
+	num_of_customers = 0
+	customers = []
+	customer_dict = {}
+	items_wanted = {}
+	dict = {$Chair1:0, $Chair3:0, $Chair5:0}
+	

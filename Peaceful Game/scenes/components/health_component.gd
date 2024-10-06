@@ -8,8 +8,9 @@ class_name HealthComponent
 	set(new_hp):
 		if new_hp <= 0:
 			emit_signal("death")
-		if new_hp < current_hp:
-			emit_signal("hurt", current_hp)
+		if new_hp != current_hp:
+			emit_signal("hurt", new_hp)
+
 		
 		current_hp = new_hp
 

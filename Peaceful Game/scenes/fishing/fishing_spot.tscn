@@ -1,10 +1,10 @@
 [gd_scene load_steps=21 format=3 uid="uid://bdch7a2frbi7c"]
 
-[ext_resource type="PackedScene" uid="uid://lf7371va354r" path="res://scenes/fishing/minigame_fish.tscn" id="1_1buts"]
-[ext_resource type="Script" path="res://scenes/fishing/fishing_spot.gd" id="1_lk48h"]
-[ext_resource type="Texture2D" uid="uid://dtobo56xg5c8w" path="res://assets/sprites/Sunnyside_World_Assets/Elements/VFX/Glint/spr_deco_glint_01_strip6.png" id="3_7cly8"]
-[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="4_5qnm3"]
-[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_tgq66"]
+[ext_resource type="Script" path="res://scenes/fishing/fishing_spot.gd" id="1_pwyj7"]
+[ext_resource type="Texture2D" uid="uid://dtobo56xg5c8w" path="res://assets/sprites/Sunnyside_World_Assets/Elements/VFX/Glint/spr_deco_glint_01_strip6.png" id="2_qskk0"]
+[ext_resource type="PackedScene" uid="uid://lf7371va354r" path="res://scenes/fishing/minigame_fish.tscn" id="3_hxuv0"]
+[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="4_wfu0d"]
+[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_2jyrw"]
 
 [sub_resource type="Animation" id="Animation_ejwmd"]
 length = 0.001
@@ -81,27 +81,27 @@ _data = {
 }
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_epcrj"]
-atlas = ExtResource("3_7cly8")
+atlas = ExtResource("2_qskk0")
 region = Rect2(0, 0, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqi6k"]
-atlas = ExtResource("3_7cly8")
+atlas = ExtResource("2_qskk0")
 region = Rect2(7, 0, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84k4i"]
-atlas = ExtResource("3_7cly8")
+atlas = ExtResource("2_qskk0")
 region = Rect2(14, 0, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2prc"]
-atlas = ExtResource("3_7cly8")
+atlas = ExtResource("2_qskk0")
 region = Rect2(21, 0, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pua0q"]
-atlas = ExtResource("3_7cly8")
+atlas = ExtResource("2_qskk0")
 region = Rect2(28, 0, 7, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bykb"]
-atlas = ExtResource("3_7cly8")
+atlas = ExtResource("2_qskk0")
 region = Rect2(35, 0, 7, 7)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f44ub"]
@@ -137,10 +137,10 @@ radius = 32.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_5qnm3")
+"texture": ExtResource("4_wfu0d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_tgq66")
+"texture": ExtResource("5_2jyrw")
 }],
 "loop": true,
 "name": &"default",
@@ -221,7 +221,7 @@ _data = {
 }
 
 [node name="FishingSpot" type="Node2D" node_paths=PackedStringArray("mini_game")]
-script = ExtResource("1_lk48h")
+script = ExtResource("1_pwyj7")
 mini_game = NodePath("MinigameFish")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -254,7 +254,7 @@ position = Vector2(-6.75, -3.25)
 scale = Vector2(0.785714, 0.785714)
 sprite_frames = SubResource("SpriteFrames_f44ub")
 
-[node name="MinigameFish" parent="." instance=ExtResource("1_1buts")]
+[node name="MinigameFish" parent="." instance=ExtResource("3_hxuv0")]
 visible = false
 offset_left = -18.0
 offset_top = -13.0

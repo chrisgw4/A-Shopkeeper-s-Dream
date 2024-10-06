@@ -73,7 +73,6 @@ func _update_stamina(new_val) -> void:
 signal stop_activity()
 
 func _stop_activities() -> void:
-	print("STOP")
 	stop_activities = true
 	unrestrict_movement()
 	emit_signal("stop_activity")
@@ -85,6 +84,7 @@ func restrict_movement(type:String) -> void:
 
 func unrestrict_movement() -> void:
 	movement_component.restrict_movement = false
+	_enter_idle_state()
 
 
 func _enter_attack_state() -> void:

@@ -1,5 +1,5 @@
 extends Node2D
-class_name Rock
+class_name RockObject
 
 var rock_scene:PackedScene = preload("res://scenes/pick_ups/rock.tscn")
 
