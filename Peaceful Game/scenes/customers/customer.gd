@@ -44,7 +44,10 @@ func _ready() -> void:
 	
 	item_texture.texture = item_to_want.get_texture()
 	
-	
+
+
+func free_item() -> void:
+	item_to_want.queue_free()
 
 
 func _physics_process(delta: float) -> void:
@@ -123,3 +126,4 @@ func _on_movement_component_stop_moving() -> void:
 func _on_movement_component_switch_directions(new_state: bool) -> void:
 	hair_sprite.flip_h = new_state
 	body_sprite.flip_h = new_state
+

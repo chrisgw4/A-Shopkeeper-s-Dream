@@ -120,6 +120,7 @@ func remove_customers() -> void:
 	for i in get_tree().current_scene.get_children():
 		if i is Customer:
 			i.queue_free()
+			i.free_item()
 	num_of_customers = 0
 	customers = []
 	customer_dict = {}

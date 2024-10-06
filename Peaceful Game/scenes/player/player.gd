@@ -44,6 +44,7 @@ func _add_to_inventory(item:Item) -> void:
 		if item.item_name == i.item_name:
 			if inventory[i] < 3:
 				inventory[i] += 1
+				item.queue_free()
 				$PickUpSound.pitch_scale = 1 - randf_range(-0.4, 0.4)
 				$PickUpSound.play()
 			return
