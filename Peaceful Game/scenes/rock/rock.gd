@@ -19,11 +19,13 @@ signal restrict_movement()
 func _ready() -> void:
 	mini_game.connect("win", _die)
 	mini_game.connect("click", _edit_player_stamina)
+	
 
 
 func _edit_player_stamina() -> void:
 	if player:
 		player.health_component.damage(0.25)
+		print("damage")
 
 
 func _die() -> void:

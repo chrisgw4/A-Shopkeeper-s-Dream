@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://hrqhn6lhv0bv"]
+[gd_scene load_steps=10 format=3 uid="uid://hrqhn6lhv0bv"]
 
 [ext_resource type="PackedScene" uid="uid://dhu4ts6sy5ye3" path="res://scenes/player/player.tscn" id="1_wull3"]
 [ext_resource type="PackedScene" uid="uid://biyyhh1kjx02l" path="res://scenes/UI/inventory.tscn" id="2_2o6tr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bne2ac4w26k2m" path="res://scenes/tree/collect_list.tscn" id="5_s80cb"]
 [ext_resource type="Texture2D" uid="uid://bwvnvgl11njs4" path="res://assets/sprites/Keyboard White-1.png (5).png" id="5_wu17k"]
 [ext_resource type="PackedScene" uid="uid://ctbg3rbtpcdv5" path="res://scenes/UI/money_ui.tscn" id="7_3mi00"]
+[ext_resource type="PackedScene" uid="uid://bdch7a2frbi7c" path="res://fishing_spot.tscn" id="9_2gnk0"]
 [ext_resource type="PackedScene" uid="uid://bdeatu4e5lokr" path="res://scenes/tavern/tavern.tscn" id="9_13buh"]
 
 [node name="Game" type="Node2D"]
@@ -65,3 +66,6 @@ offset_top = -119.0
 offset_right = -209.0
 offset_bottom = -119.0
 scale = Vector2(0.6, 0.6)
+
+[node name="FishingSpot" parent="Town" instance=ExtResource("9_2gnk0")]
+position = Vector2(599, 202)

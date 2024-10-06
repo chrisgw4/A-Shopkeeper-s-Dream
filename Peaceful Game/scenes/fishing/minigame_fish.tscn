@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://lf7371va354r"]
+
+[ext_resource type="Script" path="res://scenes/fishing/minigame_fish.gd" id="1_8eevj"]
+[ext_resource type="Texture2D" uid="uid://doul28vrhpwyl" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_right.png" id="2_6pjx6"]
+[ext_resource type="Texture2D" uid="uid://fscfen5bm82q" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_left.png" id="3_iufo7"]
+[ext_resource type="Texture2D" uid="uid://ctqblw7lsrrbq" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_up.png" id="4_8edj0"]
+[ext_resource type="Texture2D" uid="uid://c5hervtn5evf7" path="res://assets/sprites/Sunnyside_World_Assets/UI/arrow_down.png" id="5_nkr5d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sa37p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iufo7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nkr5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6pjx6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8edj0")
+}],
+"loop": true,
+"name": &"Directions",
+"speed": 5.0
+}]
+
+[node name="MinigameFish" type="Control" node_paths=PackedStringArray("arrows")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8eevj")
+arrows = [NodePath("Arrow1"), NodePath("Arrow2"), NodePath("Arrow3"), NodePath("Arrow4")]
+
+[node name="Arrow1" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_sa37p")
+animation = &"Directions"
+
+[node name="Camera2D" type="Camera2D" parent="Arrow1"]
+zoom = Vector2(1.9, 1.9)
+
+[node name="Arrow2" type="AnimatedSprite2D" parent="."]
+position = Vector2(12, 0)
+sprite_frames = SubResource("SpriteFrames_sa37p")
+animation = &"Directions"
+
+[node name="Arrow3" type="AnimatedSprite2D" parent="."]
+position = Vector2(24, 0)
+sprite_frames = SubResource("SpriteFrames_sa37p")
+animation = &"Directions"
+
+[node name="Arrow4" type="AnimatedSprite2D" parent="."]
+position = Vector2(36, 0)
+sprite_frames = SubResource("SpriteFrames_sa37p")
+animation = &"Directions"

@@ -1,0 +1,282 @@
+[gd_scene load_steps=21 format=3 uid="uid://bdch7a2frbi7c"]
+
+[ext_resource type="PackedScene" uid="uid://lf7371va354r" path="res://scenes/fishing/minigame_fish.tscn" id="1_1buts"]
+[ext_resource type="Script" path="res://fishing_spot.gd" id="1_lk48h"]
+[ext_resource type="Texture2D" uid="uid://dtobo56xg5c8w" path="res://assets/sprites/Sunnyside_World_Assets/Elements/VFX/Glint/spr_deco_glint_01_strip6.png" id="3_7cly8"]
+[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="4_5qnm3"]
+[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_tgq66"]
+
+[sub_resource type="Animation" id="Animation_ejwmd"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ollk3"]
+resource_name = "Shine"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shine:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shine5:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shine4:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shine3:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Shine2:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jryhc"]
+_data = {
+"RESET": SubResource("Animation_ejwmd"),
+"Shine": SubResource("Animation_ollk3")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epcrj"]
+atlas = ExtResource("3_7cly8")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqi6k"]
+atlas = ExtResource("3_7cly8")
+region = Rect2(7, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84k4i"]
+atlas = ExtResource("3_7cly8")
+region = Rect2(14, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2prc"]
+atlas = ExtResource("3_7cly8")
+region = Rect2(21, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pua0q"]
+atlas = ExtResource("3_7cly8")
+region = Rect2(28, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bykb"]
+atlas = ExtResource("3_7cly8")
+region = Rect2(35, 0, 7, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f44ub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epcrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqi6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84k4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2prc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pua0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bykb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1vhd2"]
+radius = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sdtwr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5qnm3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tgq66")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_mapx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D3:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D3:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ul2gl"]
+resource_name = "click"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D3:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D3:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pg5ac"]
+_data = {
+"RESET": SubResource("Animation_mapx0"),
+"click": SubResource("Animation_ul2gl")
+}
+
+[node name="FishingSpot" type="Node2D" node_paths=PackedStringArray("mini_game")]
+script = ExtResource("1_lk48h")
+mini_game = NodePath("MinigameFish")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_jryhc")
+}
+
+[node name="Shine5" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, 4)
+scale = Vector2(0.617347, 0.617347)
+sprite_frames = SubResource("SpriteFrames_f44ub")
+
+[node name="Shine4" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4, 4)
+scale = Vector2(0.45153, 0.45153)
+sprite_frames = SubResource("SpriteFrames_f44ub")
+
+[node name="Shine3" type="AnimatedSprite2D" parent="."]
+position = Vector2(-0.25, 0.25)
+scale = Vector2(1.07143, 1.07143)
+sprite_frames = SubResource("SpriteFrames_f44ub")
+
+[node name="Shine2" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -4)
+scale = Vector2(0.785714, 0.785714)
+sprite_frames = SubResource("SpriteFrames_f44ub")
+
+[node name="Shine" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6.75, -3.25)
+scale = Vector2(0.785714, 0.785714)
+sprite_frames = SubResource("SpriteFrames_f44ub")
+
+[node name="MinigameFish" parent="." instance=ExtResource("1_1buts")]
+visible = false
+offset_left = -18.0
+offset_top = -13.0
+offset_right = -18.0
+offset_bottom = -13.0
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+shape = SubResource("CircleShape2D_1vhd2")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -28)
+sprite_frames = SubResource("SpriteFrames_sdtwr")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pg5ac")
+}
+
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]
