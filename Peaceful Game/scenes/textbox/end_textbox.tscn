@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://coca5di5l4hv4"]
+
+[ext_resource type="Script" path="res://scenes/textbox/end_textbox.gd" id="1_j1thl"]
+[ext_resource type="Texture2D" uid="uid://bsxppejdorl1j" path="res://assets/Textbox-2/Next.png" id="2_jqc2h"]
+[ext_resource type="Texture2D" uid="uid://c18s5tqvd844n" path="res://assets/Textbox-2/Next_Clicked.png" id="3_vfc76"]
+[ext_resource type="Texture2D" uid="uid://dregth1u740pm" path="res://assets/Textbox-2/TextBox.png" id="4_s6y7r"]
+[ext_resource type="FontFile" uid="uid://bsqyetpr5ufu8" path="res://assets/Fonts/joystix monospace.otf" id="5_y4b3t"]
+
+[node name="End Textbox" type="Node2D" node_paths=PackedStringArray("label")]
+texture_filter = 1
+script = ExtResource("1_j1thl")
+label = NodePath("RichTextLabel")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+z_index = 1
+y_sort_enabled = true
+offset_left = 450.0
+offset_top = 262.0
+offset_right = 537.0
+offset_bottom = 349.0
+scale = Vector2(0.719999, 0.719999)
+texture_normal = ExtResource("2_jqc2h")
+texture_pressed = ExtResource("3_vfc76")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 100.0
+offset_top = 185.0
+offset_right = 799.0
+offset_bottom = 415.0
+scale = Vector2(0.588786, 0.588786)
+mouse_filter = 2
+texture = ExtResource("4_s6y7r")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(200, 100)
+offset_left = 119.0
+offset_top = 205.0
+offset_right = 469.0
+offset_bottom = 305.0
+scale = Vector2(0.96458, 1.21419)
+theme_override_fonts/normal_font = ExtResource("5_y4b3t")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

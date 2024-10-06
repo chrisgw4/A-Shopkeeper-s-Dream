@@ -20,6 +20,7 @@ func _change_day() -> void:
 
 func _ready() -> void:
 	new_day()
+	pass
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

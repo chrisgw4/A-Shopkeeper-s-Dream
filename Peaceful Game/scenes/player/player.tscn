@@ -2623,6 +2623,7 @@ health_component = NodePath("HealthComponent")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_larmi")
 animation = &"idle"
+frame = 1
 
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

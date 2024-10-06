@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://7mdk32hofwaf"]
+[gd_scene load_steps=63 format=3 uid="uid://7mdk32hofwaf"]
 
 [ext_resource type="Script" path="res://scenes/forest.gd" id="1_a4cl1"]
 [ext_resource type="Texture2D" uid="uid://dy1mucapih5i" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px-1.png" id="1_y5lmg"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="11_1e07q"]
 [ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="12_try26"]
 [ext_resource type="AudioStream" uid="uid://vffpo8d7r33g" path="res://assets/music/road-trip-12876.mp3" id="15_6t4xc"]
+[ext_resource type="PackedScene" uid="uid://pi2cp88kkw24" path="res://scenes/textbox/textbox.tscn" id="16_c4oe5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhq33"]
 size = Vector2(66, 11)
@@ -2453,15 +2454,19 @@ texture = ExtResource("1_y5lmg")
 11:18/0 = 0
 11:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:18/0/physics_layer_0/angular_velocity = 0.0
+11:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:18/0 = 0
 12:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:18/0/physics_layer_0/angular_velocity = 0.0
+12:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:18/0 = 0
 13:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:18/0/physics_layer_0/angular_velocity = 0.0
+13:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:18/0 = 0
 14:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:18/0/physics_layer_0/angular_velocity = 0.0
+14:18/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:18/0 = 0
 15:18/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:18/0/physics_layer_0/angular_velocity = 0.0
@@ -2567,15 +2572,19 @@ texture = ExtResource("1_y5lmg")
 11:19/0 = 0
 11:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:19/0/physics_layer_0/angular_velocity = 0.0
+11:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:19/0 = 0
 12:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:19/0/physics_layer_0/angular_velocity = 0.0
+12:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:19/0 = 0
 13:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:19/0/physics_layer_0/angular_velocity = 0.0
+13:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:19/0 = 0
 14:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:19/0/physics_layer_0/angular_velocity = 0.0
+14:19/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:19/0 = 0
 15:19/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:19/0/physics_layer_0/angular_velocity = 0.0
@@ -2684,15 +2693,19 @@ texture = ExtResource("1_y5lmg")
 11:20/0 = 0
 11:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:20/0/physics_layer_0/angular_velocity = 0.0
+11:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:20/0 = 0
 12:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:20/0/physics_layer_0/angular_velocity = 0.0
+12:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:20/0 = 0
 13:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:20/0/physics_layer_0/angular_velocity = 0.0
+13:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:20/0 = 0
 14:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:20/0/physics_layer_0/angular_velocity = 0.0
+14:20/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:20/0 = 0
 15:20/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:20/0/physics_layer_0/angular_velocity = 0.0
@@ -2816,15 +2829,19 @@ texture = ExtResource("1_y5lmg")
 11:21/0 = 0
 11:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 11:21/0/physics_layer_0/angular_velocity = 0.0
+11:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 12:21/0 = 0
 12:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:21/0/physics_layer_0/angular_velocity = 0.0
+12:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 13:21/0 = 0
 13:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:21/0/physics_layer_0/angular_velocity = 0.0
+13:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 14:21/0 = 0
 14:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 14:21/0/physics_layer_0/angular_velocity = 0.0
+14:21/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:21/0 = 0
 15:21/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 15:21/0/physics_layer_0/angular_velocity = 0.0
@@ -5693,7 +5710,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("CanvasLayer2/ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -5705,7 +5722,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/path = NodePath("CanvasLayer2/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -5717,7 +5734,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect2:color")
+tracks/2/path = NodePath("CanvasLayer2/ColorRect2:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -5729,7 +5746,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect2:visible")
+tracks/3/path = NodePath("CanvasLayer2/ColorRect2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -5745,7 +5762,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
+tracks/0/path = NodePath("CanvasLayer2/ColorRect:color")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -5757,7 +5774,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/path = NodePath("CanvasLayer2/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -5769,7 +5786,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect2:color")
+tracks/2/path = NodePath("CanvasLayer2/ColorRect2:color")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -5781,7 +5798,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect2:visible")
+tracks/3/path = NodePath("CanvasLayer2/ColorRect2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -5797,7 +5814,7 @@ length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/path = NodePath("CanvasLayer2/ColorRect:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -5809,7 +5826,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
+tracks/1/path = NodePath("CanvasLayer2/ColorRect:color")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -5821,7 +5838,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect2:color")
+tracks/2/path = NodePath("CanvasLayer2/ColorRect2:color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -5833,7 +5850,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("ColorRect2:visible")
+tracks/3/path = NodePath("CanvasLayer2/ColorRect2:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -5884,10 +5901,10 @@ mouse_filter = 2
 
 [node name="CollectList" parent="CanvasLayer" instance=ExtResource("3_b0bdy")]
 z_as_relative = false
-offset_left = 547.0
-offset_top = 7.0
-offset_right = 667.0
-offset_bottom = 202.0
+offset_left = 10.0001
+offset_top = 33.0
+offset_right = 130.0
+offset_bottom = 228.0
 scale = Vector2(0.7, 0.7)
 
 [node name="Inventory" parent="CanvasLayer" node_paths=PackedStringArray("player") instance=ExtResource("4_8utqq")]
@@ -5898,6 +5915,29 @@ mouse_filter = 2
 player = NodePath("../../TileMap/Player")
 
 [node name="DayChangeUI" parent="." instance=ExtResource("7_6gmej")]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2"]
+visible = false
+offset_left = -480.0
+offset_top = -444.0
+offset_right = 1266.0
+offset_bottom = 750.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer2"]
+visible = false
+offset_left = 1922.0
+offset_top = -1235.0
+offset_right = 2884.0
+offset_bottom = -674.0
+color = Color(0, 0, 0, 1)
+
+[node name="Intro Textbox" parent="CanvasLayer2" instance=ExtResource("16_c4oe5")]
+visible = false
+position = Vector2(146, 150)
+scale = Vector2(0.6, 0.6)
 
 [node name="Tavern" parent="." node_paths=PackedStringArray("collect_list", "player") instance=ExtResource("10_lpld5")]
 position = Vector2(2073, -1242)
@@ -6054,24 +6094,6 @@ libraries = {
 "": SubResource("AnimationLibrary_pg5ac")
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-z_index = 9
-offset_left = -300.0
-offset_top = 3.0
-offset_right = 662.0
-offset_bottom = 564.0
-color = Color(0, 0, 0, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-visible = false
-z_index = 9
-offset_left = 1922.0
-offset_top = -1235.0
-offset_right = 2884.0
-offset_bottom = -674.0
-color = Color(0, 0, 0, 1)
-
 [node name="TavernHouseSpawn" type="Node2D" parent="."]
 position = Vector2(200, 344)
 
@@ -6082,11 +6104,12 @@ libraries = {
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_6t4xc")
-volume_db = -5.0
+volume_db = -8.0
 max_distance = 100000.0
 bus = &"Music"
 
 [connection signal="menu_done" from="DayChangeUI" to="." method="_on_day_change_ui_menu_done"]
+[connection signal="text_finished" from="CanvasLayer2/Intro Textbox" to="." method="_on_intro_textbox_text_finished"]
 [connection signal="body_entered" from="Tavern/TavernLeave" to="." method="_on_tavern_leave_body_entered"]
 [connection signal="bed_used" from="Tavern/Bed" to="." method="_on_bed_bed_used"]
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]

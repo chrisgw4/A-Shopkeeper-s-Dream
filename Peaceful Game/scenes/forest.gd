@@ -10,13 +10,22 @@ var fish_scene:PackedScene = preload("res://scenes/fishing/fishing_spot.tscn")
 
 @export var day_change_ui:DayChangeUI
 
+var end_scene:PackedScene = preload("res://scenes/Ending/ending_scene.tscn")
+
+func end_game() -> void:
+	$FadeToBlack.play("fade")
+	
+	await $FadeToBlack.animation_finished
+	
+	get_tree().change_scene_to_packed(end_scene)
+
 
 func start_music() -> void:
 	$Music.play()
 
 func _ready() -> void:
 	$Smoke/AnimationPlayer.play("Smoke")
-	
+	$CanvasLayer/MoneyUI.end_game.connect(end_game)
 	
 	for i in $RockSpawners.get_children():
 		var temp = rock_scene.instantiate()
@@ -104,4 +113,12 @@ func _on_music_finished() -> void:
 
 
 func _on_day_change_ui_menu_done() -> void:
+	if day_change_ui.current_day == 1:
+		$"CanvasLayer2/Intro Textbox".show()
+	else:
+		$"CanvasLayer2/Intro Textbox".queue_free()
 	start_music()
+
+
+func _on_intro_textbox_text_finished() -> void:
+	pass
