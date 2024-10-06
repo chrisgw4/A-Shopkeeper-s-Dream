@@ -2274,6 +2274,7 @@ tracks/6/keys = {
 [sub_resource type="Animation" id="Animation_iljv5"]
 resource_name = "reel"
 length = 1.3
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -2503,6 +2504,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a1hju"]
+radius = 6.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("input_component", "state_machine", "body_animated_sprite", "hair_animated_sprite", "tool_animated_sprite", "movement_component", "health_component")]
 collision_layer = 2
@@ -2524,7 +2526,7 @@ frame = 1
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_emric")
-animation = &"cast"
+animation = &"reel"
 frame = 1
 
 [node name="Tool" type="AnimatedSprite2D" parent="."]
@@ -2532,7 +2534,7 @@ visible = false
 texture_filter = 1
 position = Vector2(5, -2)
 sprite_frames = SubResource("SpriteFrames_d6iqr")
-animation = &"cast"
+animation = &"reel"
 frame = 1
 
 [node name="BodyAnimationPlayer" type="AnimationPlayer" parent="."]
@@ -2541,7 +2543,7 @@ libraries = {
 }
 
 [node name="HealthComponent" parent="." instance=ExtResource("2_igg06")]
-max_hp = 100.0
+max_hp = 50.0
 
 [node name="InputComponent" parent="." node_paths=PackedStringArray("movement_component") instance=ExtResource("3_lewuj")]
 movement_component = NodePath("../MovementComponent")

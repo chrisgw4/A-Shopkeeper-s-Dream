@@ -76,6 +76,7 @@ func _leave_tavern() -> void:
 
 
 signal confirmed_request(item:Item, amount:int, customer:Customer)
+signal end_request(item:Item, amount:int, _customer:Customer)
 
 func _on_confirm_pressed() -> void:
 	$TextureRect/HFlowContainer/Confirm.hide()
@@ -97,6 +98,8 @@ func request_completed() -> void:
 	var temp = happy_scene.instantiate()
 	temp.global_position = global_position
 	get_tree().current_scene.add_child(temp)
+	emit_signal("end_request", item_to_want, 1, self)
+	
 	if item_to_want.item_name == "Rock":
 		emit_signal("completed_request", 25)
 	elif item_to_want.item_name == "Wood":

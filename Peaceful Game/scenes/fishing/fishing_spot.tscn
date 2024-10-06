@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://bdch7a2frbi7c"]
 
 [ext_resource type="PackedScene" uid="uid://lf7371va354r" path="res://scenes/fishing/minigame_fish.tscn" id="1_1buts"]
-[ext_resource type="Script" path="res://fishing_spot.gd" id="1_lk48h"]
+[ext_resource type="Script" path="res://scenes/fishing/fishing_spot.gd" id="1_lk48h"]
 [ext_resource type="Texture2D" uid="uid://dtobo56xg5c8w" path="res://assets/sprites/Sunnyside_World_Assets/Elements/VFX/Glint/spr_deco_glint_01_strip6.png" id="3_7cly8"]
 [ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="4_5qnm3"]
 [ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_tgq66"]

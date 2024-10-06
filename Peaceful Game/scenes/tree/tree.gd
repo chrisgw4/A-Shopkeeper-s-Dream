@@ -24,7 +24,7 @@ func spawn_wood() -> void:
 		temp.lower_bound = global_position.y + randi_range(12, 24)
 		temp.linear_velocity = Vector2(randf_range(-80, 80), randf_range(-200, -100))
 		temp.gravity_scale = 1
-		get_tree().current_scene.add_child(temp)
+		get_tree().current_scene.get_node("TileMap").add_child(temp)
 
 func _ready() -> void:
 	$AnimationPlayer.play("idle")
@@ -55,6 +55,7 @@ func _take_damage() -> void:
 
 
 func _on_player_detector_body_entered(player: Player) -> void:
+	player.stop_activity.connect(stop_game)
 	player.input_component.interact.connect(_play_game)
 	connect("restrict_movement", player.restrict_movement)
 	connect("died", player.unrestrict_movement)
@@ -64,16 +65,21 @@ func _on_player_detector_body_entered(player: Player) -> void:
 
 signal restrict_movement(type:String)
 
+func stop_game() -> void:
+	player.unrestrict_movement()
+	mini_game.set_deferred("visible", false)
 
 func _play_game() -> void:
+	if player.stop_activities:
+		return
 	emit_signal("restrict_movement", "axe")
 	mini_game.set_deferred("visible", true)
 	
 	
 
 
-
 func _on_player_detector_body_exited(player: Player) -> void:
+	player.stop_activity.disconnect(stop_game)
 	player.input_component.interact.disconnect(_play_game)
 	restrict_movement.disconnect(player.restrict_movement)
 	died.disconnect(player.unrestrict_movement)

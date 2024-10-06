@@ -50,6 +50,7 @@ func _on_timer_timeout() -> void:
 	customer.connect("confirmed_request", collect_list._add_item)
 	customer.connect("confirmed_request", customer_confirmed)
 	customer.connect("completed_request", player.update_money)
+	customer.connect("end_request", collect_list._remove_item)
 	
 	
 	

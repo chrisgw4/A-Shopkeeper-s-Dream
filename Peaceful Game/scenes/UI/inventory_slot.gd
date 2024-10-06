@@ -17,10 +17,10 @@ func _add_item(item:Item, remove_parent:bool = true) -> void:
 	if self.item != null and item.item_name == self.item.item_name:
 		count+=1
 		if remove_parent:
-			get_tree().current_scene.call_deferred("remove_child", item)
+			get_tree().current_scene.get_node("TileMap").call_deferred("remove_child", item)
 		return
 	if remove_parent:
-		get_tree().current_scene.call_deferred("remove_child", item)
+		get_tree().current_scene.get_node("TileMap").call_deferred("remove_child", item)
 	$MarginContainer/TextureRect.texture = item.get_texture()
 	self.item = item
 	$Label.visible = true

@@ -13,7 +13,6 @@ func _physics_process(delta: float) -> void:
 func _on_pickup_area_body_entered(player: Player) -> void:
 	player._add_to_inventory(self)
 	
-	
 
 func get_texture() -> Texture2D:
 	return $AnimatedSprite2D.sprite_frames.get_frame_texture("default", 0)

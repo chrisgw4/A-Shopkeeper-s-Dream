@@ -1,0 +1,144 @@
+[gd_scene load_steps=12 format=3 uid="uid://b370uslev2sa3"]
+
+[ext_resource type="Script" path="res://scenes/bed.gd" id="1_fqbr0"]
+[ext_resource type="Texture2D" uid="uid://b3vi8ddu0v7iy" path="res://assets/sprites/Keyboard White-1.png.png" id="1_n4nfh"]
+[ext_resource type="Texture2D" uid="uid://35o2t6ymmr74" path="res://assets/sprites/Keyboard White-1.png (1).png" id="2_iboq2"]
+[ext_resource type="Texture2D" uid="uid://c5v06nis3331s" path="res://assets/sprites/baseFurnitureAndMagicStuff-1.png.png" id="3_fweau"]
+[ext_resource type="FontFile" uid="uid://bvylw0uchwit6" path="res://assets/joystix monospace.otf" id="5_n0hih"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_katgh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fweau")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwas4"]
+radius = 32.0156
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jlt30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_n4nfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_iboq2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_mapx0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D3:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D3:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ul2gl"]
+resource_name = "click"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D3:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D3:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pg5ac"]
+_data = {
+"RESET": SubResource("Animation_mapx0"),
+"click": SubResource("Animation_ul2gl")
+}
+
+[node name="Bed" type="Node2D"]
+script = ExtResource("1_fqbr0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_katgh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qwas4")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -27)
+sprite_frames = SubResource("SpriteFrames_jlt30")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pg5ac")
+}
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -44.0
+offset_top = -46.0
+offset_right = 142.0
+offset_bottom = -23.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_n0hih")
+text = "Enter Next Day"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

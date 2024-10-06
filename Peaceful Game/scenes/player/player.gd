@@ -70,9 +70,13 @@ func _update_stamina(new_val) -> void:
 	stamina_bar.value = new_val
 
 
+signal stop_activity()
+
 func _stop_activities() -> void:
+	print("STOP")
 	stop_activities = true
 	unrestrict_movement()
+	emit_signal("stop_activity")
 
 
 func restrict_movement(type:String) -> void:

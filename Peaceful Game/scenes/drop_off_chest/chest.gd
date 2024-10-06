@@ -30,13 +30,14 @@ func move_item_into_chest() -> void:
 
 
 func drop_off() -> void:
-	print(player.inventory)
-	print(customers)
+	#print(player.inventory)
+	#print(customers)
 	
 	if player:
 		for i in player.inventory:
 			for customer in customers:
-				if customer.item_to_want.item_name == i.item_name and player.inventory[i] > 0:
+				if customer.item_to_want.item_name == i.item_name and player.inventory[i] > 0 and i not in queued_items:
+					#print("num: ", i.item_name,  " ", player.inventory[i], " Player Inventory: ", player.inventory)
 					queued_items[i] = clamp(player.inventory[i], 0, items_wanted[i.item_name])
 					player.inventory[i] -= queued_items[i]
 		
@@ -45,7 +46,8 @@ func drop_off() -> void:
 				player.inventory.erase(i)
 			
 		player._update_inventory()
-		
+		#print(player.inventory)
+		#print("Queued Items: ",queued_items)
 		if len(queued_items) > 0:
 			move_item_into_chest()
 
@@ -60,5 +62,5 @@ func _on_player_detector_body_entered(body: Player) -> void:
 
 func _on_player_detector_body_exited(body: Player) -> void:
 	player.input_component.interact.disconnect(drop_off)
-	
+	$AnimatedSprite2D3.visible = false
 	
