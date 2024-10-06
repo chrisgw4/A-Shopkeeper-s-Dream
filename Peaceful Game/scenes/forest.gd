@@ -23,9 +23,14 @@ func end_game() -> void:
 func start_music() -> void:
 	$Music.play()
 
+func show_tired() -> void:
+	$CanvasLayer/TiredLabel.show()
+
 func _ready() -> void:
 	$Smoke/AnimationPlayer.play("Smoke")
 	$CanvasLayer/MoneyUI.end_game.connect(end_game)
+	
+	player.health_component.death.connect(show_tired)
 	
 	for i in $RockSpawners.get_children():
 		var temp = rock_scene.instantiate()
@@ -115,8 +120,8 @@ func _on_music_finished() -> void:
 func _on_day_change_ui_menu_done() -> void:
 	if day_change_ui.current_day == 1:
 		$"CanvasLayer2/Intro Textbox".show()
-	else:
-		$"CanvasLayer2/Intro Textbox".queue_free()
+	$CanvasLayer/TiredLabel.hide()
+	player.stop_activities = false
 	start_music()
 
 

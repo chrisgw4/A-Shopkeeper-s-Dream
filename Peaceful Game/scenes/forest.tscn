@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://7mdk32hofwaf"]
+[gd_scene load_steps=64 format=3 uid="uid://7mdk32hofwaf"]
 
 [ext_resource type="Script" path="res://scenes/forest.gd" id="1_a4cl1"]
 [ext_resource type="Texture2D" uid="uid://dy1mucapih5i" path="res://assets/sprites/Sunnyside_World_Assets/Tileset/spr_tileset_sunnysideworld_16px-1.png" id="1_y5lmg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ejxlk8nht0gl" path="res://assets/sprites/Keyboard White-1.png (5).png" id="6_3kawe"]
 [ext_resource type="PackedScene" uid="uid://d1ghmcl32u7x6" path="res://scenes/UI/day_change_ui.tscn" id="7_6gmej"]
 [ext_resource type="PackedScene" uid="uid://ctbg3rbtpcdv5" path="res://scenes/UI/money_ui.tscn" id="7_15xv7"]
+[ext_resource type="FontFile" uid="uid://bsqyetpr5ufu8" path="res://assets/Fonts/joystix monospace.otf" id="7_ievev"]
 [ext_resource type="PackedScene" uid="uid://b370uslev2sa3" path="res://scenes/bed.tscn" id="8_vkukx"]
 [ext_resource type="PackedScene" uid="uid://bdeatu4e5lokr" path="res://scenes/tavern/tavern.tscn" id="10_lpld5"]
 [ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="11_1e07q"]
@@ -5913,6 +5914,18 @@ offset_top = 1.0
 offset_bottom = 1.0
 mouse_filter = 2
 player = NodePath("../../TileMap/Player")
+
+[node name="TiredLabel" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 468.0
+offset_top = 345.0
+offset_right = 798.0
+offset_bottom = 368.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("7_ievev")
+text = "You're tired, go rest now"
 
 [node name="DayChangeUI" parent="." instance=ExtResource("7_6gmej")]
 
