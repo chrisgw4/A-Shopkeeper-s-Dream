@@ -32,7 +32,8 @@ func move_item_into_chest() -> void:
 func drop_off() -> void:
 	#print(player.inventory)
 	#print(customers)
-	
+	if $Item2.is_playing():
+		return
 	if player:
 		for i in player.inventory:
 			for customer in customers:
