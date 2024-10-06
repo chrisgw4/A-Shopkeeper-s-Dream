@@ -6,13 +6,13 @@ class_name HealthComponent
 
 @onready var current_hp:float = max_hp:
 	set(new_hp):
+		new_hp = clamp(new_hp, 0, max_hp)
 		if new_hp <= 0:
 			emit_signal("death")
 		if new_hp != current_hp:
 			emit_signal("hurt", new_hp)
-
 		
-		current_hp = new_hp
+		current_hp = clamp(new_hp, 0, max_hp)
 
 signal hurt(hp)
 signal death()

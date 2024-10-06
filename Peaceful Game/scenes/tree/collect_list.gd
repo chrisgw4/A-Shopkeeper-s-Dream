@@ -21,6 +21,11 @@ func _remove_item(item:Item, amount:int, _customer:Customer) -> void:
 		dict[item.item_name].remove_item(item)
 		#dict.erase(item.item_name)
 
+func remove_all() -> void:
+	for i in $VFlowContainer.get_children():
+		i.queue_free()
+	dict.clear()
+
 
 func _remove_collect_list_item(item_name:String) -> void:
 	dict.erase(item_name)

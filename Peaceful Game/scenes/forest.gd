@@ -107,6 +107,7 @@ func _on_bed_bed_used() -> void:
 	$Tavern.remove_customers()
 	day_change_ui.new_day()
 	_respawn_objects()
+	$CanvasLayer/CollectList.remove_all()
 	
 	await day_change_ui.get_node("AnimationPlayer").animation_finished
 	
