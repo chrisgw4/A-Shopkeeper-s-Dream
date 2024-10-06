@@ -1,0 +1,297 @@
+[gd_scene load_steps=14 format=3 uid="uid://7oxpo3psb7s1"]
+
+[ext_resource type="Script" path="res://scenes/title/title_screen.gd" id="1_kxva1"]
+[ext_resource type="Texture2D" uid="uid://bqkg377duj20h" path="res://assets/sprites/Bodacious Games Logo.png" id="1_p7mm7"]
+[ext_resource type="Texture2D" uid="uid://ckftebhq0sjec" path="res://assets/sprites/Title Background.png" id="1_xu3h1"]
+[ext_resource type="Texture2D" uid="uid://dy3vf8auytpdt" path="res://assets/sprites/Presents.png" id="2_edhxl"]
+[ext_resource type="Texture2D" uid="uid://bsdavfgohtqoj" path="res://assets/sprites/ASG Logo.png" id="2_hhuo5"]
+[ext_resource type="Texture2D" uid="uid://3bkg0bgmnqcf" path="res://assets/sprites/Sound Effect.png" id="2_u715v"]
+[ext_resource type="Texture2D" uid="uid://qwgbhqprnl8p" path="res://assets/sprites/plaaayyy.png" id="6_3a71t"]
+[ext_resource type="Texture2D" uid="uid://dujq8fe4tow8y" path="res://assets/sprites/plaaayyy_click.png" id="7_xnicn"]
+[ext_resource type="Texture2D" uid="uid://dhm364nk7h0k0" path="res://assets/sprites/Music.png" id="9_f4xh3"]
+
+[sub_resource type="Animation" id="Animation_2hsy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("BD Logo:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Presents:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ep4hp"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2:color")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_lf7ua"]
+resource_name = "fade_back"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BD Logo:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Presents:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08wu7"]
+_data = {
+"RESET": SubResource("Animation_2hsy4"),
+"fade": SubResource("Animation_ep4hp"),
+"fade_back": SubResource("Animation_lf7ua")
+}
+
+[node name="Title Screen" type="Node2D"]
+script = ExtResource("1_kxva1")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 268.0
+offset_top = 331.0
+offset_right = 571.0
+offset_bottom = 376.0
+scale = Vector2(0.364243, 0.364243)
+texture = ExtResource("2_u715v")
+
+[node name="HSlider2" type="HSlider" parent="."]
+z_index = 1
+custom_minimum_size = Vector2(200, 2.08165e-12)
+offset_left = 221.0
+offset_top = 347.0
+offset_right = 421.0
+offset_bottom = 363.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 187.0
+offset_top = -1.0
+offset_right = 437.0
+offset_bottom = 233.0
+texture = ExtResource("2_hhuo5")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+z_index = 9
+offset_left = 1922.0
+offset_top = -1235.0
+offset_right = 2884.0
+offset_bottom = -674.0
+color = Color(0, 0, 0, 1)
+
+[node name="BG" type="TextureRect" parent="."]
+offset_left = -29.0
+offset_top = -2.0
+offset_right = 2469.0
+offset_bottom = 1416.0
+scale = Vector2(0.271971, 0.271971)
+texture = ExtResource("1_xu3h1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 9
+offset_left = -254.0
+offset_top = -33.0
+offset_right = 708.0
+offset_bottom = 528.0
+color = Color(0, 0, 0, 1)
+
+[node name="BD Logo" type="TextureRect" parent="."]
+z_index = 10
+offset_left = -10.0
+offset_top = -1.0
+offset_right = 1910.0
+offset_bottom = 1079.0
+scale = Vector2(0.333201, 0.333201)
+texture = ExtResource("1_p7mm7")
+
+[node name="FadeToBlack" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_08wu7")
+}
+
+[node name="Presents" type="TextureRect" parent="."]
+z_index = 10
+offset_left = 187.0
+offset_top = 230.0
+offset_right = 2107.0
+offset_bottom = 1310.0
+scale = Vector2(0.127783, 0.0445827)
+texture = ExtResource("2_edhxl")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 275.0
+offset_top = 258.0
+offset_right = 357.0
+offset_bottom = 300.0
+texture_normal = ExtResource("6_3a71t")
+texture_pressed = ExtResource("7_xnicn")
+
+[node name="HSlider" type="HSlider" parent="."]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+offset_left = 221.0
+offset_top = 316.0
+offset_right = 421.0
+offset_bottom = 332.0
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 292.0
+offset_top = 302.0
+offset_right = 449.0
+offset_bottom = 347.0
+scale = Vector2(0.364243, 0.364243)
+texture = ExtResource("9_f4xh3")
