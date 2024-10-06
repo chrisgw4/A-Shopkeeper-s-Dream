@@ -36,13 +36,14 @@ func _update_inventory() -> void:
 
 
 func _add_to_inventory(item:Item) -> void:
-	emit_signal("new_item_collected", item)
+	
 	
 	
 	var item_in_inv:bool = false
 	for i in inventory:
 		if item.item_name == i.item_name:
 			if inventory[i] < 3:
+				emit_signal("new_item_collected", item)
 				inventory[i] += 1
 				item.queue_free()
 				$PickUpSound.pitch_scale = 1 - randf_range(-0.4, 0.4)
@@ -52,6 +53,7 @@ func _add_to_inventory(item:Item) -> void:
 	if len(inventory) >= 3:
 		return
 	
+	emit_signal("new_item_collected", item)
 	inventory[item] = 1
 	$PickUpSound.pitch_scale = 1 - randf_range(-0.4, 0.4)
 	$PickUpSound.play()

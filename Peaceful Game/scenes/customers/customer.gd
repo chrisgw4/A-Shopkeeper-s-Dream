@@ -47,7 +47,8 @@ func _ready() -> void:
 
 
 func free_item() -> void:
-	item_to_want.queue_free()
+	if is_instance_valid(item_to_want):
+		item_to_want.queue_free()
 
 
 func _physics_process(delta: float) -> void:
@@ -75,7 +76,8 @@ func stop_moving(body) -> void:
 
 func _leave_tavern() -> void:
 	on_way_out = true
-	item_to_want.queue_free()
+	if is_instance_valid(item_to_want):
+		item_to_want.queue_free()
 
 
 signal confirmed_request(item:Item, amount:int, customer:Customer)
