@@ -23,6 +23,7 @@ var items_wanted:Dictionary = {}
 func _ready() -> void:
 	$Timer.start()
 	chest.connect("deposited_item", _check_customer_request)
+	$AnimationPlayer.play("Fireplace")
 
 
 func _on_timer_timeout() -> void:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=284 format=3 uid="uid://dhu4ts6sy5ye3"]
+[gd_scene load_steps=285 format=3 uid="uid://dhu4ts6sy5ye3"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_6gmfq"]
+[ext_resource type="Texture2D" uid="uid://b2hynf22hx3vc" path="res://assets/sprites/Shadow.png" id="2_2ffpx"]
 [ext_resource type="Texture2D" uid="uid://v0ae243nluv2" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/base_run_strip8.png" id="2_6ytto"]
 [ext_resource type="Texture2D" uid="uid://dssgys3ety6so" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/base_idle_strip9.png" id="2_483mr"]
 [ext_resource type="Texture2D" uid="uid://c2rqo6h86gvkd" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/ATTACK/base_attack_strip10.png" id="2_djegx"]
@@ -2006,10 +2007,10 @@ tracks/1/path = NodePath("Body:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2066,10 +2067,10 @@ tracks/6/path = NodePath("Hair:frame")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 }
 tracks/7/type = "method"
 tracks/7/imported = false
@@ -2272,10 +2273,10 @@ tracks/1/path = NodePath("Body:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -2296,10 +2297,10 @@ tracks/3/path = NodePath("Hair:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -2619,6 +2620,12 @@ tool_animated_sprite = NodePath("Tool")
 movement_component = NodePath("MovementComponent")
 health_component = NodePath("HealthComponent")
 
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+position = Vector2(0, 6)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_2ffpx")
+
 [node name="Body" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_larmi")
@@ -2628,7 +2635,7 @@ frame = 1
 [node name="Hair" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_emric")
-animation = &"reel"
+animation = &"waiting"
 frame = 1
 
 [node name="Tool" type="AnimatedSprite2D" parent="."]
@@ -2636,7 +2643,7 @@ visible = false
 texture_filter = 1
 position = Vector2(5, -2)
 sprite_frames = SubResource("SpriteFrames_d6iqr")
-animation = &"reel"
+animation = &"waiting"
 frame = 1
 
 [node name="BodyAnimationPlayer" type="AnimationPlayer" parent="."]

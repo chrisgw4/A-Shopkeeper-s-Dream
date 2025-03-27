@@ -20,10 +20,8 @@ radius = 8.0
 [node name="Rock" instance=ExtResource("1_5ofdh")]
 item_name = "Rock"
 
-[node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(-2, 5)
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_dkvo7")
-offset = Vector2(2, -6)
 
 [node name="CollisionShape2D" parent="PickupArea" index="0"]
 shape = SubResource("CircleShape2D_el2y2")

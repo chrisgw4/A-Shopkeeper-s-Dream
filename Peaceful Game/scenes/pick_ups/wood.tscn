@@ -21,7 +21,7 @@ radius = 7.0
 gravity_scale = 1.66533e-16
 item_name = "Wood"
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_osbpe")
 
 [node name="CollisionShape2D" parent="PickupArea" index="0"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://db2ggd4o0fcu2"]
+[gd_scene load_steps=12 format=3 uid="uid://db2ggd4o0fcu2"]
 
 [ext_resource type="Script" path="res://scenes/rock/rock.gd" id="1_auysr"]
 [ext_resource type="Texture2D" uid="uid://cf4u7ffc7c1fo" path="res://assets/sprites/Sunnyside_World_Assets/spr_tileset_sunnysideworld_16px (1).png" id="1_ls1tw"]
+[ext_resource type="Texture2D" uid="uid://lsly3j0b5jh3" path="res://assets/sprites/ShadowLarge.png" id="2_dwbx2"]
 [ext_resource type="PackedScene" uid="uid://b8omxkkkp8pw4" path="res://scenes/rock/minigame_spam.tscn" id="2_kgk3r"]
-[ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="4_82rmj"]
-[ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_7srm8"]
+[ext_resource type="PackedScene" uid="uid://buhhmavythbjr" path="res://scenes/interact_press.tscn" id="7_8mfcb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tlxg0"]
 atlas = ExtResource("1_ls1tw")
@@ -38,93 +38,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ehnf5"]
 radius = 23.0
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8konv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_82rmj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_7srm8")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_mapx0"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D3:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D3:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D3:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_ul2gl"]
-resource_name = "click"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D3:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"default"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D3:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pg5ac"]
-_data = {
-"RESET": SubResource("Animation_mapx0"),
-"click": SubResource("Animation_ul2gl")
-}
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_7y80r"]
 radius = 6.0
 
@@ -133,11 +46,19 @@ script = ExtResource("1_auysr")
 mini_game = NodePath("MinigameSpam")
 health = 1
 
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+z_index = -1
+position = Vector2(0, 3)
+scale = Vector2(0.58, 0.58)
+texture = ExtResource("2_dwbx2")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ddsva")
 offset = Vector2(-2, 4.79213e-12)
 
 [node name="PlayerDetector" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -146,26 +67,20 @@ shape = SubResource("CircleShape2D_ehnf5")
 
 [node name="MinigameSpam" parent="." instance=ExtResource("2_kgk3r")]
 visible = false
-offset_left = -7.0
+offset_left = -7.5
 offset_top = -20.0
-offset_right = -7.0
+offset_right = -7.5
 offset_bottom = -20.0
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
-visible = false
-position = Vector2(0, -28)
-sprite_frames = SubResource("SpriteFrames_8konv")
-
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_pg5ac")
-}
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0, 8)
 shape = SubResource("CircleShape2D_7y80r")
+
+[node name="InteractPress" parent="." instance=ExtResource("7_8mfcb")]
+position = Vector2(0, -32)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

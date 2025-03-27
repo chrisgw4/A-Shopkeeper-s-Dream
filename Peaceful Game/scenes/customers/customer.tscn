@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://ccv5kc62oaj4y"]
+[gd_scene load_steps=38 format=3 uid="uid://ccv5kc62oaj4y"]
 
 [ext_resource type="Script" path="res://scenes/customers/customer.gd" id="1_a43pt"]
 [ext_resource type="PackedScene" uid="uid://dfebh4uxessy6" path="res://scenes/components/state_machine.tscn" id="1_fwpeo"]
 [ext_resource type="Texture2D" uid="uid://dssgys3ety6so" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/IDLE/base_idle_strip9.png" id="1_glftu"]
+[ext_resource type="Texture2D" uid="uid://b2hynf22hx3vc" path="res://assets/sprites/Shadow.png" id="2_0rb0a"]
 [ext_resource type="Texture2D" uid="uid://v0ae243nluv2" path="res://assets/sprites/Sunnyside_World_Assets/Characters/Human/RUN/base_run_strip8.png" id="2_02i6u"]
 [ext_resource type="PackedScene" uid="uid://dlhn8vbebf261" path="res://scenes/components/movement_component.tscn" id="2_2y2wa"]
 [ext_resource type="SpriteFrames" uid="uid://ctx4yx6h2ibsr" path="res://scenes/customers/customer_short_hair.tres" id="3_8lhxc"]
@@ -371,8 +372,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_s26ec"]
 radius = 3.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujs0g"]
-size = Vector2(20, 83)
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgccn"]
+radius = 31.0161
 
 [node name="Customer" type="CharacterBody2D" node_paths=PackedStringArray("hair_sprite", "body_sprite", "state_machine", "movement_component")]
 collision_layer = 8
@@ -382,6 +383,12 @@ hair_sprite = NodePath("Hair")
 body_sprite = NodePath("Body")
 state_machine = NodePath("StateMachine")
 movement_component = NodePath("MovementComponent")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.32549)
+position = Vector2(0, 6)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("2_0rb0a")
 
 [node name="Body" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_152bi")
@@ -449,8 +456,7 @@ shape = SubResource("CircleShape2D_s26ec")
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
-position = Vector2(0, -21.5)
-shape = SubResource("RectangleShape2D_ujs0g")
+shape = SubResource("CircleShape2D_jgccn")
 disabled = true
 
 [node name="Menuclick" type="AudioStreamPlayer2D" parent="."]

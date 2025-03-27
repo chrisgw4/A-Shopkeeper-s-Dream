@@ -60,8 +60,9 @@ func _on_player_detector_body_entered(player: Player) -> void:
 	player.input_component.interact.connect(_play_game)
 	connect("restrict_movement", player.restrict_movement)
 	connect("died", player.unrestrict_movement)
-	$AnimatedSprite2D3.visible = true
-	$AnimationPlayer3.play("click")
+	$InteractPress.enable()
+	#$AnimatedSprite2D3.visible = true
+	#$AnimationPlayer3.play("click")
 	self.player = player
 
 signal restrict_movement(type:String)
@@ -84,5 +85,6 @@ func _on_player_detector_body_exited(player: Player) -> void:
 	player.input_component.interact.disconnect(_play_game)
 	restrict_movement.disconnect(player.restrict_movement)
 	died.disconnect(player.unrestrict_movement)
-	$AnimatedSprite2D3.visible = false
+	$InteractPress.disable()
+	#$AnimatedSprite2D3.visible = false
 	self.player = null

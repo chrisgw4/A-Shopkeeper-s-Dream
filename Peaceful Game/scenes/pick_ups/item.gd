@@ -5,9 +5,10 @@ class_name Item
 var lower_bound:float = 0.0
 
 func _physics_process(delta: float) -> void:
-	if global_position.y >= lower_bound:
+	if global_position.y >= lower_bound and not gravity_scale == 0:
 		gravity_scale = 0
 		linear_velocity = Vector2.ZERO
+		$AnimationPlayer.play("Bounce")
 	
 
 func _on_pickup_area_body_entered(player: Player) -> void:

@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://buhhmavythbjr"]
+
+[ext_resource type="Script" path="res://interact_press.gd" id="1_34dr5"]
+[ext_resource type="Texture2D" uid="uid://slbtprclqg2c" path="res://assets/sprites/Keyboard White-1.png 2.png" id="2_oh3p8"]
+[ext_resource type="Texture2D" uid="uid://ch8dr4xyqx6ia" path="res://assets/sprites/Keyboard White-1.png (1) 2.png" id="3_c4cma"]
+[ext_resource type="Texture2D" uid="uid://dqgs2wqplgiwb" path="res://assets/sprites/Keys/Ps4.png" id="4_t8rsb"]
+[ext_resource type="Texture2D" uid="uid://cwxr773ryq8nu" path="res://assets/sprites/Keys/Xbox one.png" id="5_xpfgr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgssv"]
+atlas = ExtResource("4_t8rsb")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfg81"]
+atlas = ExtResource("4_t8rsb")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrjgs"]
+atlas = ExtResource("5_xpfgr")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26kmf"]
+atlas = ExtResource("5_xpfgr")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cwnux"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_oh3p8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c4cma")
+}],
+"loop": true,
+"name": &"key",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgssv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfg81")
+}],
+"loop": true,
+"name": &"ps4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrjgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26kmf")
+}],
+"loop": true,
+"name": &"xbox",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_eefhv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Keys:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_837hh"]
+resource_name = "click"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Keys:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tstho"]
+_data = {
+"RESET": SubResource("Animation_eefhv"),
+"click": SubResource("Animation_837hh")
+}
+
+[node name="InteractPress" type="Node2D" node_paths=PackedStringArray("animated_sprite")]
+z_index = 347
+script = ExtResource("1_34dr5")
+animated_sprite = NodePath("Keys")
+
+[node name="Keys" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cwnux")
+animation = &"xbox"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_tstho")
+}

@@ -50,8 +50,10 @@ func _ready() -> void:
 
 func _on_player_detector_body_entered(body: Player) -> void:
 	body.input_component.interact.connect(go_to_tavern)
-	$AnimationPlayer3.play("click")
-	$AnimatedSprite2D3.show()
+	
+	$InteractPress.enable()
+	#$AnimationPlayer3.play("click")
+	#$AnimatedSprite2D3.show()
 	player = body
 
 
@@ -67,7 +69,8 @@ func go_to_tavern() -> void:
 
 func _on_player_detector_body_exited(body: Player) -> void:
 	body.input_component.interact.disconnect(go_to_tavern)
-	$AnimatedSprite2D3.hide()
+	#$AnimatedSprite2D3.hide()
+	$InteractPress.disable()
 
 
 func _on_tavern_leave_body_entered(body: Node2D) -> void:
@@ -102,7 +105,8 @@ func _respawn_objects() -> void:
 
 
 func _on_bed_bed_used() -> void:
-	$Music.stream_paused = true
+	
+	$Music.stop()
 	player.health_component.damage(-player.health_component.max_hp)
 	$Tavern.remove_customers()
 	day_change_ui.new_day()
@@ -111,7 +115,7 @@ func _on_bed_bed_used() -> void:
 	
 	await day_change_ui.get_node("AnimationPlayer").animation_finished
 	
-	$Music.stream_paused = true
+	
 
 
 func _on_music_finished() -> void:

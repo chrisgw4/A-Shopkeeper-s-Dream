@@ -20,7 +20,7 @@ radius = 8.0
 [node name="Fish" instance=ExtResource("1_ncmh1")]
 item_name = "Fish"
 
-[node name="AnimatedSprite2D" parent="." index="0"]
+[node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_m2vvu")
 
 [node name="CollisionShape2D" parent="PickupArea" index="0"]

@@ -70,6 +70,7 @@ func _physics_process(delta: float) -> void:
 
 func stop_moving(body) -> void:
 	movement_component.accelerate_in_direction(Vector2.ZERO)
+	$PlayerDetector/CollisionShape2D.set_deferred("disabled", false)
 	
 	
 
@@ -86,7 +87,7 @@ signal end_request(item:Item, amount:int, _customer:Customer)
 func _on_confirm_pressed() -> void:
 	$TextureRect/HFlowContainer/Confirm.hide()
 	$TextureRect/HFlowContainer/Cancel.hide()
-	$PlayerDetector/CollisionShape2D.set_deferred("disabled", false)
+	#$PlayerDetector/CollisionShape2D.set_deferred("disabled", false)
 	emit_signal("confirmed_request", item_to_want, 1, self)
 	$Menuclick.pitch_scale = 1 - randf_range(-0.4, 0.4)
 	$Menuclick.play()
@@ -128,4 +129,3 @@ func _on_movement_component_stop_moving() -> void:
 func _on_movement_component_switch_directions(new_state: bool) -> void:
 	hair_sprite.flip_h = new_state
 	body_sprite.flip_h = new_state
-

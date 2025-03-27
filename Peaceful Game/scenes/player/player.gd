@@ -17,6 +17,8 @@ signal new_item_collected(item:Item)
 signal dropped_off_items()
 signal update_inventory(inventory)
 
+signal interacted
+
 
 @export var money_ui:MoneyUI
 
@@ -70,6 +72,8 @@ func _ready() -> void:
 	
 	health_component.death.connect(_stop_activities)
 	health_component.hurt.connect(_update_stamina)
+	
+	
 
 var stop_activities:bool = false
 
@@ -111,6 +115,11 @@ func _play_chop_sound() -> void:
 func _physics_process(delta: float) -> void:
 	
 	pass
+
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("interact"):
+		emit_signal("interacted")
 
 
 func switch_directions(state) -> void:
