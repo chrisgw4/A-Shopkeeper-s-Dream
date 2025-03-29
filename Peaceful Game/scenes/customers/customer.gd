@@ -144,6 +144,7 @@ func _on_movement_component_start_moving() -> void:
 
 func _on_movement_component_stop_moving() -> void:
 	state_machine._enter_state("idle")
+	_update_buttons()
 
 
 func _on_movement_component_switch_directions(new_state: bool) -> void:

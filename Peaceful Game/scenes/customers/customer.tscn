@@ -533,11 +533,13 @@ layout_mode = 2
 texture_normal = ExtResource("10_6ax4s")
 
 [node name="Accept" type="AnimatedSprite2D" parent="TextureRect/HFlowContainer"]
+visible = false
 position = Vector2(6, 5)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_imdfb")
 
 [node name="Deny" type="AnimatedSprite2D" parent="TextureRect/HFlowContainer"]
+visible = false
 position = Vector2(21, 5)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_2qmhh")
