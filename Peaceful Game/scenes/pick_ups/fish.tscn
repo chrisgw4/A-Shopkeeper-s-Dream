@@ -15,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_opmva"]
-radius = 8.0
+radius = 7.07107
 
 [node name="Fish" instance=ExtResource("1_ncmh1")]
 item_name = "Fish"

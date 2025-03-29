@@ -44,8 +44,9 @@ func _on_player_detector_body_entered(p:Player) -> void:
 	connect("restrict_movement", player.restrict_movement)
 	connect("died", player.unrestrict_movement)
 	player.input_component.interact.connect(_play_game)
-	$AnimatedSprite2D3.visible = true
-	$AnimationPlayer3.play("click")
+	$InteractPress.enable()
+	#$AnimatedSprite2D3.visible = true
+	#$AnimationPlayer3.play("click")
 
 
 func _play_game() -> void:
@@ -55,8 +56,8 @@ func _play_game() -> void:
 
 
 func _on_player_detector_body_exited(p:Player) -> void:
-	
-	$AnimatedSprite2D3.visible = false
+	$InteractPress.disable()
+	#$AnimatedSprite2D3.visible = false
 	p.input_component.interact.disconnect(_play_game)
 	restrict_movement.disconnect(p.restrict_movement)
 	died.disconnect(p.unrestrict_movement)
@@ -86,4 +87,3 @@ func _fished() -> void:
 	mini_game.visible = false
 	emit_signal("died")
 	queue_free()
-

@@ -17,6 +17,11 @@ signal new_item_collected(item:Item)
 signal dropped_off_items()
 signal update_inventory(inventory)
 
+
+signal accepted_request
+signal denied_request
+
+
 signal interacted
 
 
@@ -120,6 +125,10 @@ func _physics_process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("interact"):
 		emit_signal("interacted")
+	if Input.is_action_just_pressed("accept_request"):
+		emit_signal("accepted_request")
+	if Input.is_action_just_pressed("deny_request"):
+		emit_signal("denied_request")
 
 
 func switch_directions(state) -> void:

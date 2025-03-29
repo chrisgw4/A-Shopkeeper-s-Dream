@@ -56,12 +56,14 @@ func drop_off() -> void:
 
 func _on_player_detector_body_entered(body: Player) -> void:
 	player = body
-	$AnimationPlayer3.play("click")
-	$AnimatedSprite2D3.visible = true
+	#$AnimationPlayer3.play("click")
+	#$AnimatedSprite2D3.visible = true
+	$InteractPress.enable()
 	player.input_component.interact.connect(drop_off)
 
 
 func _on_player_detector_body_exited(body: Player) -> void:
 	player.input_component.interact.disconnect(drop_off)
-	$AnimatedSprite2D3.visible = false
+	#$AnimatedSprite2D3.visible = false
+	$InteractPress.disable()
 	

@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bb32s6sxppxmb"]
+[gd_scene load_steps=18 format=3 uid="uid://bb32s6sxppxmb"]
 
 [ext_resource type="Script" path="res://scenes/drop_off_chest/chest.gd" id="1_goif3"]
 [ext_resource type="Texture2D" uid="uid://bw7gst3upghxa" path="res://assets/sprites/spr_tileset_sunnysideworld_16px-1.png.png" id="2_mjwvu"]
 [ext_resource type="Texture2D" uid="uid://d2p5u7ldqa57s" path="res://assets/sprites/Keyboard White-1.png.png" id="4_tdbmx"]
 [ext_resource type="Texture2D" uid="uid://dpn3y78pqr78n" path="res://assets/sprites/Keyboard White-1.png (1).png" id="5_g6pi0"]
 [ext_resource type="AudioStream" uid="uid://bikury28ba274" path="res://assets/sounds/plop.wav" id="5_yoti8"]
+[ext_resource type="PackedScene" uid="uid://buhhmavythbjr" path="res://scenes/interact_press.tscn" id="6_47ev5"]
 
 [sub_resource type="Animation" id="Animation_v83ig"]
 length = 0.001
@@ -319,6 +320,9 @@ libraries = {
 [node name="Plop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_yoti8")
 bus = &"SoundEffects"
+
+[node name="InteractPress" parent="." instance=ExtResource("6_47ev5")]
+position = Vector2(0, -29)
 
 [connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
 [connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

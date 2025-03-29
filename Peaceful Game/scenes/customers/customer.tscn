@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ccv5kc62oaj4y"]
+[gd_scene load_steps=47 format=3 uid="uid://ccv5kc62oaj4y"]
 
 [ext_resource type="Script" path="res://scenes/customers/customer.gd" id="1_a43pt"]
 [ext_resource type="PackedScene" uid="uid://dfebh4uxessy6" path="res://scenes/components/state_machine.tscn" id="1_fwpeo"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://y1uvm78hvycr" path="res://assets/sprites/Sunnyside_World_Assets/UI/cancel.png" id="10_6ax4s"]
 [ext_resource type="Texture2D" uid="uid://wpex1dgphwp0" path="res://assets/sprites/Sunnyside_World_Assets/Elements/Crops/wood.png" id="11_ipwio"]
 [ext_resource type="AudioStream" uid="uid://b6j0mi3mxl0l4" path="res://assets/sounds/menu_sound.wav" id="12_s1i2s"]
+[ext_resource type="Texture2D" uid="uid://cs6k4x5uvg8ln" path="res://assets/sprites/Keys/Ps4-Confirm.png" id="12_tic0a"]
+[ext_resource type="Texture2D" uid="uid://db1epmb64fow8" path="res://assets/sprites/Keys/Xbox one-Confirm.png" id="13_bls8c"]
+[ext_resource type="Texture2D" uid="uid://c6tug48mhnq8o" path="res://assets/sprites/Keys/Ps4-Deny.png" id="14_u3nrx"]
+[ext_resource type="Texture2D" uid="uid://c42ho206nqrl7" path="res://assets/sprites/Keys/Xbox one-Deny.png" id="15_x3vun"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwoke"]
 atlas = ExtResource("1_glftu")
@@ -369,11 +373,101 @@ _data = {
 "run": SubResource("Animation_65ond")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_imdfb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_tic0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_bls8c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2qmhh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_u3nrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_x3vun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_s26ec"]
 radius = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jgccn"]
-radius = 31.0161
+radius = 20.0
+
+[sub_resource type="Animation" id="Animation_6q2so"]
+resource_name = "grow"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/HFlowContainer/Accept:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.43, 0.43)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/HFlowContainer/Deny:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.4, 0.4), Vector2(0.43, 0.43)]
+}
+
+[sub_resource type="Animation" id="Animation_xdbh8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/HFlowContainer/Accept:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/HFlowContainer/Deny:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.4, 0.4)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gs1m0"]
+_data = {
+"RESET": SubResource("Animation_xdbh8"),
+"grow": SubResource("Animation_6q2so")
+}
 
 [node name="Customer" type="CharacterBody2D" node_paths=PackedStringArray("hair_sprite", "body_sprite", "state_machine", "movement_component")]
 collision_layer = 8
@@ -426,8 +520,8 @@ texture = ExtResource("8_logyf")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 21.0
-offset_right = 52.0
-offset_bottom = 61.0
+offset_right = 39.0
+offset_bottom = 32.0
 mouse_filter = 2
 
 [node name="Confirm" type="TextureButton" parent="TextureRect/HFlowContainer"]
@@ -437,6 +531,16 @@ texture_normal = ExtResource("9_1gh0q")
 [node name="Cancel" type="TextureButton" parent="TextureRect/HFlowContainer"]
 layout_mode = 2
 texture_normal = ExtResource("10_6ax4s")
+
+[node name="Accept" type="AnimatedSprite2D" parent="TextureRect/HFlowContainer"]
+position = Vector2(6, 5)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_imdfb")
+
+[node name="Deny" type="AnimatedSprite2D" parent="TextureRect/HFlowContainer"]
+position = Vector2(21, 5)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_2qmhh")
 
 [node name="TextureRect" type="TextureRect" parent="TextureRect"]
 layout_mode = 0
@@ -454,8 +558,11 @@ position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_s26ec")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(0, 7)
 shape = SubResource("CircleShape2D_jgccn")
 disabled = true
 
@@ -464,8 +571,16 @@ stream = ExtResource("12_s1i2s")
 volume_db = -10.0
 bus = &"SoundEffects"
 
+[node name="ControllerButton" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gs1m0")
+}
+
 [connection signal="start_moving" from="MovementComponent" to="." method="_on_movement_component_start_moving"]
 [connection signal="stop_moving" from="MovementComponent" to="." method="_on_movement_component_stop_moving"]
 [connection signal="switch_directions" from="MovementComponent" to="." method="_on_movement_component_switch_directions"]
 [connection signal="pressed" from="TextureRect/HFlowContainer/Confirm" to="." method="_on_confirm_pressed"]
 [connection signal="pressed" from="TextureRect/HFlowContainer/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="area_entered" from="PlayerDetector" to="." method="_on_player_detector_area_entered"]
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_player_detector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_player_detector_body_exited"]

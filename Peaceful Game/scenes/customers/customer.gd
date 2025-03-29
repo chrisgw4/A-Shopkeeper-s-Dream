@@ -17,6 +17,16 @@ var item_to_want:Item
 var happy_scene:PackedScene = preload("res://scenes/reactions/happy_face.tscn")
 var sad_scene:PackedScene = preload("res://scenes/reactions/sad_face.tscn")
 
+
+
+var textures_dict:Dictionary = {"C_Mouse":preload("res://assets/sprites/Sunnyside_World_Assets/UI/confirm.png"), "D_Mouse":preload("res://assets/sprites/Sunnyside_World_Assets/UI/cancel.png"),
+								"C_Xbox":preload("res://assets/sprites/Keys/Xbox one-Confirm.png"), "D_Xbox":preload("res://assets/sprites/Keys/Xbox one-Deny.png"),
+								"C_Ps4":preload("res://assets/sprites/Keys/Ps4-Confirm.png"), "D_Ps4":preload("res://assets/sprites/Keys/Ps4-Deny.png")}
+
+
+var request_accepted:bool = false
+
+
 var on_way_to_chair:bool = false
 var on_way_out:bool = false:
 	set(new_val):
@@ -43,6 +53,7 @@ func _ready() -> void:
 	item_to_want = items_to_want.pick_random().instantiate()
 	
 	item_texture.texture = item_to_want.get_texture()
+	
 	
 
 
@@ -85,8 +96,15 @@ signal confirmed_request(item:Item, amount:int, customer:Customer)
 signal end_request(item:Item, amount:int, _customer:Customer)
 
 func _on_confirm_pressed() -> void:
+	if on_way_out or on_way_to_chair or request_accepted:
+		return
+	request_accepted = true
 	$TextureRect/HFlowContainer/Confirm.hide()
 	$TextureRect/HFlowContainer/Cancel.hide()
+	
+	$TextureRect/HFlowContainer/Accept.visible = false
+	$TextureRect/HFlowContainer/Deny.visible = false
+	
 	#$PlayerDetector/CollisionShape2D.set_deferred("disabled", false)
 	emit_signal("confirmed_request", item_to_want, 1, self)
 	$Menuclick.pitch_scale = 1 - randf_range(-0.4, 0.4)
@@ -94,6 +112,8 @@ func _on_confirm_pressed() -> void:
 
 
 func _on_cancel_pressed() -> void:
+	if on_way_out or on_way_to_chair:
+		return
 	var temp = sad_scene.instantiate()
 	temp.global_position = global_position
 	get_tree().current_scene.add_child(temp)
@@ -129,3 +149,55 @@ func _on_movement_component_stop_moving() -> void:
 func _on_movement_component_switch_directions(new_state: bool) -> void:
 	hair_sprite.flip_h = new_state
 	body_sprite.flip_h = new_state
+
+
+func _on_player_detector_area_entered(area: Area2D) -> void:
+	
+	pass
+	
+
+func _update_buttons() -> void:
+	if request_accepted:
+		return
+	
+	if "PS" in Input.get_joy_name(0):
+		#$TextureRect/HFlowContainer/Confirm.texture_normal = textures_dict["C_Ps4"]
+		#$TextureRect/HFlowContainer/Cancel.texture_normal = textures_dict["D_Ps4"]
+		$TextureRect/HFlowContainer/Accept.visible = true
+		$TextureRect/HFlowContainer/Deny.visible = true
+		$TextureRect/HFlowContainer/Accept.frame = 0
+		$TextureRect/HFlowContainer/Deny.frame = 0
+		$TextureRect/HFlowContainer/Confirm.hide()
+		$TextureRect/HFlowContainer/Cancel.hide()
+	elif Input.get_joy_name(0) == "":
+		$TextureRect/HFlowContainer/Accept.visible = false
+		$TextureRect/HFlowContainer/Deny.visible = false
+		#$TextureRect/HFlowContainer/Confirm.texture_normal = textures_dict["C_Mouse"]
+		#$TextureRect/HFlowContainer/Cancel.texture_normal = textures_dict["D_Mouse"]
+		$TextureRect/HFlowContainer/Confirm.show()
+		$TextureRect/HFlowContainer/Cancel.show()
+	else:
+		$TextureRect/HFlowContainer/Accept.visible = true
+		$TextureRect/HFlowContainer/Deny.visible = true
+		$TextureRect/HFlowContainer/Accept.frame = 1
+		$TextureRect/HFlowContainer/Deny.frame = 1
+		$TextureRect/HFlowContainer/Confirm.hide()
+		$TextureRect/HFlowContainer/Cancel.hide()
+		#$TextureRect/HFlowContainer/Confirm.texture_normal = textures_dict["C_Xbox"]
+		#$TextureRect/HFlowContainer/Cancel.texture_normal = textures_dict["D_Xbox"]
+
+func _input(event: InputEvent) -> void:
+	_update_buttons()
+
+
+func _on_player_detector_body_entered(player: Player) -> void:
+	#_update_buttons()
+	$ControllerButton.play("grow")
+	player.accepted_request.connect(_on_confirm_pressed)
+	player.denied_request.connect(_on_cancel_pressed)
+
+
+func _on_player_detector_body_exited(player: Player) -> void:
+	$ControllerButton.play("RESET")
+	player.accepted_request.disconnect(_on_confirm_pressed)
+	player.denied_request.disconnect(_on_cancel_pressed)

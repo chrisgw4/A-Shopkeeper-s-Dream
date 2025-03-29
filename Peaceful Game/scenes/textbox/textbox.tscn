@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://pi2cp88kkw24"]
 
-[ext_resource type="Texture2D" uid="uid://bsxppejdorl1j" path="res://assets /sprites/Textbox/Next.png" id="1_6i1t3"]
+[ext_resource type="Texture2D" uid="uid://bsxppejdorl1j" path="res://assets/Textbox-2/Next.png" id="1_6i1t3"]
 [ext_resource type="Script" path="res://scenes/textbox/textbox.gd" id="1_tvnw4"]
-[ext_resource type="Texture2D" uid="uid://dregth1u740pm" path="res://assets /sprites/Textbox/TextBox.png" id="1_weo58"]
-[ext_resource type="Texture2D" uid="uid://c18s5tqvd844n" path="res://assets /sprites/Textbox/Next_Clicked.png" id="2_6lo83"]
-[ext_resource type="FontFile" uid="uid://bsqyetpr5ufu8" path="res://assets /Fonts/joystix monospace.otf" id="5_u637c"]
+[ext_resource type="Texture2D" uid="uid://dregth1u740pm" path="res://assets/Textbox-2/TextBox.png" id="1_weo58"]
+[ext_resource type="Texture2D" uid="uid://c18s5tqvd844n" path="res://assets/Textbox-2/Next_Clicked.png" id="2_6lo83"]
+[ext_resource type="FontFile" uid="uid://bsqyetpr5ufu8" path="res://assets/Fonts/joystix monospace.otf" id="5_u637c"]
 
 [node name="Intro Textbox" type="Node2D" node_paths=PackedStringArray("label")]
 script = ExtResource("1_tvnw4")

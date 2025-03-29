@@ -32,3 +32,7 @@ func _on_texture_button_pressed():
 		queue_free()
 		return
 	label.append_text(dialogue[text_index])
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("read_text"):
+		_on_texture_button_pressed()
